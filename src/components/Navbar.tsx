@@ -1,42 +1,44 @@
-import Link from "next/link";
+import { Icon, Switch, Flex, Spacer } from "@chakra-ui/react"
+import { FaMoon, FaSun } from "react-icons/fa"
 
-export default function Navbar() {
+interface NavbarProps {
+    toggleTheme: () => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    currentTheme: any; // or whatever type currentTheme should be
+}
+
+export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
     return (
-      <nav className="sticky top-0 left-0 z-50 w-full bg-gray-800 text-white md:px-8 py-4">
-        <div className="w-full flex justify-between items-center md:px-8 py-2">
-          {/* Left Section with 3 Links */}
-          <section className="flex space-x-4">
-            <Link href="/link1" className="hover:underline">
-              Link 1
-            </Link>
-            <Link href="/link2" className="hover:underline">
-              Link 2
-            </Link>
-            <Link href="/link3" className="hover:underline">
-              Link 3
-            </Link>
-          </section>
-  
-          {/* Middle Section with Icon */}
-          <section className="flex justify-center">
-            <Link href="/" className="text-lg font-semibold hover:underline">
-              ICON
-            </Link>
-          </section>
-  
-          {/* Right Section with 3 Links */}
-          <section className="flex space-x-4">
-            <Link href="/link4" className="hover:underline">
-              Link 4
-            </Link>
-            <Link href="/link5" className="hover:underline">
-              Link 5
-            </Link>
-            <Link href="/link6" className="hover:underline">
-              Link 6
-            </Link>
-          </section>
-        </div>
+      <nav className="navbar" style={{backgroundColor: currentTheme.secondary}}>
+        <Flex>
+            <h2>Sedat Can Uygur</h2>
+            <Spacer />
+            <Flex>
+                <div style={{padding: '0 1rem'}}>
+                    <h2>Home</h2>
+                </div>
+                <div style={{padding: '0 1rem'}}>
+                    <h2>About</h2>
+                </div>
+                <div style={{padding: '0 1rem'}}>
+                    <h2>Work</h2>
+                </div>
+                <div style={{padding: '0 1rem'}}>
+                    <h2>Contact</h2>
+                </div>
+            </Flex>
+            <Spacer />
+            <Switch.Root colorPalette="purple" size="lg" onChange={() => toggleTheme()}>
+                <Switch.HiddenInput />
+                <Switch.Control>
+                    <Switch.Thumb />
+                    <Switch.Indicator fallback={<Icon as={FaMoon} color="gray.400" />}>
+                        <Icon as={FaSun} color="yellow.400" />
+                    </Switch.Indicator>
+                </Switch.Control>
+                <Switch.Label></Switch.Label>
+            </Switch.Root>
+        </Flex>
       </nav>
     );
 }

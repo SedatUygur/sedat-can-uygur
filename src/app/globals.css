@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+.navbar{
+  padding: 1.2rem 5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

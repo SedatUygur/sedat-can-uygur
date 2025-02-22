@@ -3,6 +3,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
+import { defaultSystem, ChakraProvider } from "@chakra-ui/react";
+
 import { lightTheme, darkTheme, GlobalStyles } from "@/styles/ThemeConfig";
 
 import "./globals.css";
@@ -25,23 +27,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme)
   }
+  const currentTheme = theme === 'light' ? lightTheme : darkTheme;
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
-          <GlobalStyles />
-          <button onClick={toggleTheme}>Switch Theme</button>
-          <div className="flex flex-col overflow-x-clip">
-            <Navbar />
-            <main className="flex flex-grow flex-col">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <ChakraProvider value={defaultSystem}>
+          <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+            <GlobalStyles />
+            <div className="flex flex-col overflow-x-clip">
+              <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />
+              <main className="flex flex-grow flex-col">{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </ChakraProvider>
       </body>
     </html>
   );
