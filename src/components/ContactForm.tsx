@@ -1,70 +1,72 @@
-'use client'
-import React, { useState } from 'react'
+'use client';
 
-function ContactForm() {
-	const [loading, setLoading] = useState(false)
-	const [successMessage, setSuccessMessage] = useState('')
+import { FC } from 'react';
+import { useForm } from 'react-hook-form';
+//import { sendEmail } from '@/utils/send-email';
 
-	const onSubmit = async (e: React.FormEvent) => {
-		// Prevent the form from submitting the traditional way
-		e.preventDefault()
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
-		// Don't submit twice
-		if (loading) {
-			return
-		}
+const ContactForm: FC = () => {
+  const { register, handleSubmit } = useForm<FormData>();
 
-		// 👇 A nice little track to get all the form values as an object
-		const form = e.target as HTMLFormElement
-		const formValues = Object.fromEntries(new FormData(form).entries())
+  function onSubmit(data: FormData) {
+    //sendEmail(data);
+  }
 
-		setLoading(true)
-		setSuccessMessage('')
-
-		try {
-			await fetch('/api/contact', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(formValues),
-			}).then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`)
-				}
-				return response.json()
-			})
-
-			setLoading(false)
-			setSuccessMessage('Thank you for contacting us!')
-
-			// Reset the form values after a successful submission
-			form.reset()
-		} catch (err) {
-			console.error(err)
-			alert('An error occurred while sending your message...')
-			setLoading(false)
-		}
-	}
-
-	return (
-		<form onSubmit={onSubmit}>
-			<label>
-				<span>Name</span>
-				<input type="text" name="name" required />
-			</label>
-			<label>
-				<span>Email</span>
-				<input type="email" name="email" required />
-			</label>
-			<label>
-				<span>Message</span>
-				<textarea name="message" required />
-			</label>
-			<button disabled={loading} type="submit">
-				Send message!
-			</button>
-			{successMessage && <p>{successMessage}</p>}
-		</form>
-	)
-}
-
-export default ContactForm
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className='mb-5'>
+        <label
+          htmlFor='name'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Full Name
+        </label>
+        <input
+          type='text'
+          placeholder='Full Name'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('name', { required: true })}
+        />
+      </div>
+      <div className='mb-5'>
+        <label
+          htmlFor='email'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Email Address
+        </label>
+        <input
+          type='email'
+          placeholder='example@domain.com'
+          className='w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('email', { required: true })}
+        />
+      </div>
+      <div className='mb-5'>
+        <label
+          htmlFor='message'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Message
+        </label>
+        <textarea
+          rows={4}
+          placeholder='Type your message'
+          className='w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md'
+          {...register('message', { required: true })}
+        ></textarea>
+      </div>
+      <div>
+        <button className='hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none'>
+          Submit
+        </button>
+      </div>
+    </form>
+  );
+};
+export default ContactForm;
