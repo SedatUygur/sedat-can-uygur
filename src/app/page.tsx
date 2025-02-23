@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '../../components/ContactForm';
 
 export default function Home() {
 

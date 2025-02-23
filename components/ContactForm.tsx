@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { sendEmail } from '@/utils/send-email';
+import { sendEmail } from '@/lib/send-email';
 
 import styles from '../styles/contactform.module.css';
 
