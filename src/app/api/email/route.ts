@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-    const { email, name, message } = await request.json();
+    const { email, name, message, phone } = await request.json();
 
     const transport = nodemailer.createTransport({
         service: 'gmail',
@@ -15,10 +15,17 @@ export async function POST(request: NextRequest) {
 
     const mailOptions: Mail.Options = {
         from: process.env.MY_EMAIL,
-        to: process.env.MY_EMAIL,
-        cc: email,
-        subject: `Message from ${name} (${email})`,
+        to: email,
+        cc: process.env.MY_EMAIL,
+        subject: `Thanks for contacting with me, ${name}`,
         text: message,
+        html: `<h3>Hello ${name}, your message has been successfully received.</h3>
+        <p>Below you will find a copy of your email:</p>
+        <p><strong>Name: </strong>${name}</p>
+        <p><strong>Email: </strong>${email}</p>
+        <p><strong>Phone: </strong>${phone}</p>
+        <h4>Message: </h4><p>${message}</p>
+        <p style="color:red;">Please do not reply to this email!</p>`
     };
 
     const sendMailPromise = () => new Promise<string>((resolve, reject) => {

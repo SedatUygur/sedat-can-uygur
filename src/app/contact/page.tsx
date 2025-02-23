@@ -8,7 +8,7 @@ export default function About() {
 
   return (
     <div className={styles.page}>
-      Contact Page
+      Contact Me
       <ContactForm />
     </div>
   );

@@ -10,6 +10,7 @@ export type FormData = {
   name: string;
   email: string;
   message: string;
+  phone: string;
 };
 
 const ContactForm: FC = () => {
@@ -47,6 +48,20 @@ const ContactForm: FC = () => {
           placeholder='example@domain.com'
           className={styles.nameAndEmail}
           {...register('email', { required: true })}
+        />
+      </div>
+      <div className={styles.divMarginBottom}>
+        <label
+          htmlFor='phone'
+          className={styles.label}
+        >
+          Phone
+        </label>
+        <input
+          type='tel'
+          placeholder='+1 (555) 555-5555'
+          className={styles.nameAndEmail}
+          {...register('phone', { required: true })}
         />
       </div>
       <div className={styles.divMarginBottom}>
