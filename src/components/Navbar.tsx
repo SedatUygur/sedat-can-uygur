@@ -1,5 +1,7 @@
-import { Icon, Switch } from "@chakra-ui/react"
-import { FaMoon, FaSun } from "react-icons/fa"
+import { Icon, Switch } from '@chakra-ui/react'
+import { FaMoon, FaSun } from 'react-icons/fa'
+import Link from 'next/link'
+
 import styles from '../styles/navbar.module.css'
 
 interface NavbarProps {
@@ -15,16 +17,16 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
                 <h2 className={styles.logo}>Sedat Can Uygur</h2>
                 <div style={{ display: 'flex' }}>
                     <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <a>Home</a>
+                        <Link href='/'>Home</Link>
                     </div>
                     <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <a>About</a>
+                        <Link href='/about'>About</Link>
                     </div>
                     <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <a>Work</a>
+                        <Link href='/work'>Work</Link>
                     </div>
                     <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <a>Contact</a>
+                        <Link href='/contact'>Contact</Link>
                     </div>
                 </div>
                 <Switch.Root colorPalette="purple" size="lg" onChange={() => toggleTheme()}>
