@@ -19,4 +19,14 @@ export async function POST(request: NextRequest) {
         subject: `Message from ${name} (${email})`,
         text: message,
     };
+
+    const sendMailPromise = () => new Promise<string>((resolve, reject) => {
+        transport.sendMail(mailOptions, function (err) {
+            if (!err) {
+                resolve('Email sent');
+            } else {
+                reject(err.message);
+            }
+        });
+    });
 }
