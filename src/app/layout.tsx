@@ -5,12 +5,12 @@ import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import { defaultSystem, ChakraProvider } from "@chakra-ui/react";
 
-import { lightTheme, darkTheme, GlobalStyles } from "../../styles/ThemeConfig";
+import { lightTheme, darkTheme, GlobalStyles } from "@/styles/ThemeConfig";
 
 import "./globals.css";
 
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
