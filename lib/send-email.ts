@@ -1,4 +1,5 @@
 import { FormData } from '@/components/ContactForm';
+import { toaster } from "@/src/components/ui/toaster";
 
 export function sendEmail(data: FormData) {
     const apiEndpoint = '/api/email';
@@ -9,9 +10,19 @@ export function sendEmail(data: FormData) {
     })
       .then((res) => res.json())
       .then((response) => {
-        alert(response.message);
+        toaster.create({
+          title: "Contact Form",
+          type: "success",
+          description: response.message,
+          duration: 5000,
+        })
       })
       .catch((err) => {
-        alert(err);
+        toaster.create({
+          title: "Contact Form",
+          type: "error",
+          description: err,
+          duration: 5000,
+        })
       });
 }
