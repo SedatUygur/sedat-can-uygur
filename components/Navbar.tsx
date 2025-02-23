@@ -1,6 +1,6 @@
-import { Icon, Switch } from '@chakra-ui/react'
+import { Icon, Switch, useMediaQuery } from '@chakra-ui/react'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import Link from 'next/link'
+import NavLinks from './NavLinks'
 
 import styles from '../styles/navbar.module.css'
 
@@ -11,24 +11,20 @@ interface NavbarProps {
 }
 
 export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
+    const [drawerVisible] = useMediaQuery(['(max-width: 950px)'], {
+        ssr: true,
+        fallback: [false], // return false on the server and re-evaluate on the client side
+    });
     return (
-        <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow }}>
-            <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
-                <h2 className={styles.logo}>Sedat Can Uygur</h2>
-                <div style={{ display: 'flex' }}>
-                    <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <Link href='/'>Home</Link>
-                    </div>
-                    <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <Link href='/about'>About</Link>
-                    </div>
-                    <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <Link href='/work'>Work</Link>
-                    </div>
-                    <div className={styles.navlinks} style={{ padding: '0 1.5rem' }}>
-                        <Link href='/contact'>Contact</Link>
-                    </div>
-                </div>
+        <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow, padding: !drawerVisible ? '0.9rem 5rem 1.3rem 5rem' : '0.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline', marginBottom: !drawerVisible ? '0' : '10px' }}>
+                <h2 className={styles.logo} style={{ fontSize: !drawerVisible ? '30px' : '20px' }}>Sedat Can Uygur</h2>
+                { !drawerVisible
+                    ? <div style={{ display: 'flex' }}>
+                        <NavLinks drawerVisible={!drawerVisible} />
+                      </div>
+                    : null
+                }
                 <Switch.Root colorPalette="purple" size="lg" onChange={() => toggleTheme()}>
                     <Switch.HiddenInput />
                     <Switch.Control>
@@ -40,6 +36,15 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
                     <Switch.Label></Switch.Label>
                 </Switch.Root>
             </div>
+            { drawerVisible
+                ? <>
+                <hr></hr>
+                <div style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '10px' }}>
+                    <NavLinks drawerVisible={drawerVisible}/>
+                </div>
+                </>
+                : null
+            }
         </div>
     );
 }

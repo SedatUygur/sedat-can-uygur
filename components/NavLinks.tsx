@@ -12,16 +12,16 @@ const NavLinks = ({ drawerVisible }: { drawerVisible: boolean }) => {
     return (
         <>
             <div className={styles.navlinks} style={inlineStyles}>
-                <Link href='/'><a>Home</a></Link>
+                <Link href='/'>Home</Link>
             </div>
             <div className={styles.navlinks} style={inlineStyles}>
-                <Link href='/about'><a>About</a></Link>
+                <Link href='/about'>About</Link>
             </div>
             <div className={styles.navlinks} style={inlineStyles}>
-                <Link href='/work'><a>Work</a></Link>
+                <Link href='/work'>Work</Link>
             </div>
             <div className={styles.navlinks} style={inlineStyles}>
-                <Link href='/contact'><a>Contact</a></Link>
+                <Link href='/contact'>Contact</Link>
             </div>
         </>
 
