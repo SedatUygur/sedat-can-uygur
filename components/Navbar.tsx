@@ -25,7 +25,7 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
                       </div>
                     : null
                 }
-                <Switch.Root colorPalette="purple" size="lg" onChange={() => toggleTheme()}>
+                <Switch.Root checked={currentTheme.name === 'dark'} colorPalette="purple" size="lg" onChange={() => toggleTheme()}>
                     <Switch.HiddenInput />
                     <Switch.Control>
                         <Switch.Thumb />

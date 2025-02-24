@@ -1,9 +1,11 @@
 "use client";
 
 import Link from 'next/link'
-import styles from "./page.module.css";
+
 import Project from '@/components/Project';
+import Skills from '@/components/Skills';
 import { projects } from '@/public/js/projects';
+import styles from "./page.module.css";
 
 export default function Home() {
 
@@ -25,32 +27,17 @@ export default function Home() {
                   )
               })
           }
-          <div style={{textAlign: 'center', paddingBottom: '2rem'}}><Link className={styles.cta3} href="/work">View All <span>&gt;</span></Link></div>
+          <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link className={styles.cta3} href="/work">View All <span>&gt;</span></Link></div>
       </div>
       <div id="skills" className={styles.homeSkillSection}>
-          <h1 className={styles.workheading}>Skills</h1>
-          <div className={styles.skills}>
-              <ul className={styles.skillList}>  
-                  <h1 className={styles.skillHeading}>Frontend</h1>
-                  <h2>HTML5, CSS3, JS</h2>
-                  <h2>React JS</h2>
-                  <h2>Next JS</h2>
-              </ul>
-              <div className={styles.line}></div>
-              <ul className={styles.skillList}>
-                  <h1 className={styles.skillHeading}>Backend</h1>
-                  <h2>Node JS</h2>
-                  <h2>Express JS</h2>
-                  <h2>Python</h2>
-              </ul>
-              <div className={styles.line}></div>
-              <ul className={styles.skillList}>
-                  <h1 className={styles.skillHeading}>Database</h1>
-                  <h2>Firebase</h2>
-                  <h2>MongoDB</h2>
-              </ul>
-          </div>
-          <div style={{textAlign: 'center', padding: '1rem 0'}}><Link className={styles.cta3} href="/contact">Get in touch <span>&gt;</span></Link></div>
+        <Skills />
+      </div>
+      <div id="about" className={styles.homeAboutSection}>
+        <h1 className={styles.workheading}>About Me</h1>
+        <p className={styles.aboutText}>Hi I am Sedat Can Uygur. I’ve been a full-stack engineer for over 8 years, working with a variety of technologies, including C#, Java, Python, JavaScript, and TypeScript. I started my career focusing on back-end 
+systems, especially in .NET, but over time I expanded to front-end frameworks like Angular and React. In my recent roles, I’ve worked on projects for global brands such as Under Armour and SSS, where I developed 
+scalable microservices and integrated multiple APIs. For the past couple of years, I’ve also gained experience with cloud platforms—AWS and Azure—using Docker and Kubernetes to containerize and orchestrate 
+microservices. This experience feels highly relevant on cloud-native applications and modern architectures.</p>
       </div>
     </div>
   );
