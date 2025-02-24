@@ -18,10 +18,10 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
     return (
         <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow, padding: !drawerVisible ? '0.9rem 5rem 1.3rem 5rem' : '0.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline', marginBottom: !drawerVisible ? '0' : '10px' }}>
-                <h2 className={styles.logo} style={{ fontSize: !drawerVisible ? '30px' : '20px' }}>Sedat Can Uygur</h2>
+                <h2 className={styles.logo}>Sedat Can Uygur</h2>
                 { !drawerVisible
                     ? <div style={{ display: 'flex' }}>
-                        <NavLinks drawerVisible={!drawerVisible} />
+                        <NavLinks />
                       </div>
                     : null
                 }
@@ -40,7 +40,7 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
                 ? <>
                 <hr></hr>
                 <div style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '10px' }}>
-                    <NavLinks drawerVisible={drawerVisible}/>
+                    <NavLinks />
                 </div>
                 </>
                 : null

@@ -1,3 +1,7 @@
+.contactForm {
+    z-index: 10;
+}
+
 .divMarginBottom {
     margin-bottom: 1.25rem;
 }

@@ -1,5 +1,11 @@
 .logo{
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.navlinks {
+  padding: 0 1.5rem;
+  font-size: 15px;
 }
 
 .navlinks a{
@@ -28,4 +34,15 @@
 .navlinks a:hover:after {
   width: 100%;
   transition: 0.25s linear;
+}
+
+@media only screen and (max-width: 950px){
+  .logo{
+    font-size: 20px;
+  }
+
+  .navlinks {
+    padding: 0.5rem;
+    font-size: 12px;
+  } 
 }

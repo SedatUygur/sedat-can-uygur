@@ -21,7 +21,7 @@ const ContactForm: FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.divMarginBottom}>
         <label
           htmlFor='name'
