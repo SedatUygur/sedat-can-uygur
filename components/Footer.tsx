@@ -58,7 +58,7 @@ const Footer = () => {
               </ul>
             </div>
             {/* Copyright Section */}
-            <div className="text-center md:text-right">
+            <div className={styles.copyright}>
               <p>
                 &copy; {new Date().getFullYear()} Sedat Can Uygur. All rights reserved.
               </p>

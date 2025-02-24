@@ -6,14 +6,37 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  /*display: grid;
+  grid-template-rows: 20px 1fr 20px;*/
+  /*padding: 80px;*/
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  gap: 10px;
   font-family: var(--font-geist-sans);
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 25vw;
+  background-color: #d7f7f5;
+}
+
+.page::before{
+  content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('@/public/images/zbynek-burival-8iZG31eXkks-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    opacity: 0.3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +47,74 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+    background-color: #263859;
+  }
+  .subheading{
+    color: #D0D0D0;
+  }
+}
+
+/*.homeheading{
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25vw;
+}
+
+.homeheading::before{
+  content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('zbynek-burival-8iZG31eXkks-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    opacity: 0.3;
+}*/
+
+.heading{
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  margin: 0 1rem;
+}
+
+.subheading{
+  position: relative;
+  font-size: 19px;
+  color: #707070;
+}
+
+@media only screen and (max-width: 850px){
+  .homeheading{
+    padding: 0 15vw;
+  }
+  .heading{
+    font-size: 35px;
+  }
+  .subheading{
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 535px){
+  .homeheading{
+    height: 70vh;
+    padding: 0 10vw;
+  }
+  .heading{
+    font-size: 22px;
+  }
+  .subheading{
+    font-size: 15px;
   }
 }
 
