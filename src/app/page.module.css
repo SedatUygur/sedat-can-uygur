@@ -14,7 +14,7 @@
   min-height: 100svh;
   gap: 10px;
   font-family: var(--font-geist-sans);
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   text-align: center;
   position: relative;
@@ -56,6 +56,24 @@
     background-color: #d7f7f5;
     color: #101010;
   }
+  .cta3{
+    background-color: #d7f7f5;
+    color: #101010; 
+    box-shadow: 0px 2px 10px -2px rgba(51, 51, 51, 0.5);
+    border: 2px solid #d7f7f5;
+  }
+  .homeSkillSection{
+    background-color: #263859;
+  }
+  .skills{
+    color: #D0D0D0;
+  }
+  .skillHeading{
+    color: #FAFAFA;
+  }
+  .line{
+    background-color: #D0D0D0;
+  }
 }
 
 .heading{
@@ -86,8 +104,65 @@
   transform: translateY(-5px);
 }
 
+.workheading{
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.homeWorkSection{
+  padding: 2rem;
+}
+
+.homeSkillSection{
+  padding: 4rem 2rem;
+  background-color: #d7f7f5;
+}
+
+.cta3{
+  padding: 0.4rem 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  font-size: 16px;
+  background-color: #263859;
+  color: #FAFAFA; 
+  box-shadow: 0px 2px 10px -2px rgba(134, 134, 134, 0.5);
+  border: 2px solid #263859;
+}
+
+.cta3:hover{
+  transform: translateY(-5px);
+}
+
+.skills{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem 0;
+  color: #707070;
+}
+
+.line{
+  width: 2px;
+  height: auto;
+  background-color: #707070;
+}
+
+.skillList{
+  padding: 1rem 0;
+}
+
+.skillHeading{
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #363537;
+}
+
 @media only screen and (max-width: 850px){
-  .homeheading {
+  .page {
     padding: 0 15vw;
   }
   .heading {
@@ -101,10 +176,27 @@
     margin-top: 1rem;
     font-size: 15px;
   }
+  .workheading{
+    font-size: 45px;
+  }
+  .skills{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    padding: 2rem 0;
+  }
+  .line{
+    width: 100%;
+    height: 2px;
+    margin: 1rem 0;
+  }
+  .skillList{
+    padding: 1rem 3rem;
+  }
 }
 
 @media only screen and (max-width: 535px){
-  .homeheading{
+  .page{
     height: 70vh;
     padding: 0 10vw;
   }
@@ -113,6 +205,16 @@
   }
   .subheading{
     font-size: 15px;
+  }
+  .workheading{
+    font-size: 40px;
+  }
+  .homeWorkSection{
+    padding: 1rem;
+  }
+
+  .homeSkillSection{
+    padding: 2rem 1rem;
   }
 }
 
