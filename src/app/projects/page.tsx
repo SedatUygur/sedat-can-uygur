@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "../page.module.css";
-import ProjectsAndBlogs from '@/components/ProjectsAndBlogs';
+import BlogsAndProjects from '@/components/BlogsAndProjects';
 
 export default function Projects() {
 
   return (
     <div className={styles.page}>
-      <ProjectsAndBlogs />
+      <BlogsAndProjects />
     </div>
   );
 }

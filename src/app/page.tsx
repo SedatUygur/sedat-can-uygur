@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import Project from '@/components/Project';
+import HomeProject from '@/components/HomeProject';
 import Skills from '@/components/Skills';
 import { projects } from '@/public/js/projects';
 import styles from "./page.module.css";
@@ -14,20 +14,20 @@ export default function Home() {
       <div className={styles.page}>
           <h1 className={styles.heading}>Hey there, I am Sedat Can.</h1>
           <h2 className={styles.subheading}>With over 8 years of professional experience, I am driven to leverage my expertise in full-stack development to deliver scalable, high-quality, microservice architecture applications.</h2>
-          <Link className={styles.workLink} href="/work">My work</Link>
+          <Link className={styles.workLink} href="/projects">My projects</Link>
       </div>
       <div className={styles.homeWorkSection} id="work">
-          <h1 className={styles.workheading}>Work</h1>
+          <h1 className={styles.workheading}>Projects</h1>
           {
               projects.slice(0, 3).map((project) => {
                   return (
                       <div key={project.id}>
-                          <Project project={project} />
+                          <HomeProject project={project} />
                       </div>
                   )
               })
           }
-          <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link className={styles.cta3} href="/work">View All <span>&gt;</span></Link></div>
+          <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link className={styles.cta3} href="/projects">View All <span>&gt;</span></Link></div>
       </div>
       <div id="skills" className={styles.homeSkillSection}>
         <Skills />

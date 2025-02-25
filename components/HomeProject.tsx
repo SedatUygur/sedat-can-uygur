@@ -2,14 +2,14 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegramPlane } from "@fortawesome/free-brands-svg-icons"
 
-import styles from '@/styles/project.module.css'
+import styles from '@/styles/homeproject.module.css'
 
 interface Project {
     name: string;
     description: string;
 }
 
-const Project = ({ project }: { project: Project }) => {
+const HomeProject = ({ project }: { project: Project }) => {
     return (
         <div className={styles.projectmain}>
             <div className={styles.projectContent}>
@@ -22,4 +22,4 @@ const Project = ({ project }: { project: Project }) => {
     )
 }
 
-export default Project
+export default HomeProject
