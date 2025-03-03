@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import styles from "../page.module.css";
 import BlogCard from '@/components/BlogCard';
+import Carousel, { CarouselItem } from "@/components/Carousel";
 
 export default function About() {
     const [blogList, setBlogList] = useState([]);
@@ -15,14 +16,15 @@ export default function About() {
     return (
         <div className={styles.page}>
             <div className={styles.workHeading}>Blogs</div>
-            { blogList ? blogList.map((blog, key) => {
-                return (
-                    <div key={key}>
-                        <BlogCard blog={blog} />
-                    </div>
-                )
-                }) : <div>Loading...</div>
-            }
+            <Carousel>
+                {blogList.map((blog, key) => {
+                    return (
+                        <CarouselItem key={key} width={undefined}>
+                                <BlogCard blog={blog} />
+                        </CarouselItem>
+                    )
+                })}
+            </Carousel>
         </div>
     );
 }
