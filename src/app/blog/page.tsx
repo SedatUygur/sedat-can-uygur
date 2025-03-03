@@ -16,15 +16,17 @@ export default function About() {
     return (
         <div className={styles.page}>
             <div className={styles.workHeading}>Blogs</div>
-            <Carousel>
-                {blogList.map((blog, key) => {
-                    return (
-                        <CarouselItem key={key} width={undefined}>
+            {
+                blogList ? <Carousel>
+                    {blogList.map((blog, key) => {
+                        return (
+                            <CarouselItem key={key} width={undefined}>
                                 <BlogCard blog={blog} />
-                        </CarouselItem>
-                    )
-                })}
-            </Carousel>
+                            </CarouselItem>
+                        )
+                    })}
+                </Carousel> : <p>Loading...</p>
+            }
         </div>
     );
 }

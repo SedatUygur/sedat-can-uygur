@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react';
+import { useSwipeable } from "react-swipeable";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faWebAwesome } from "@fortawesome/free-brands-svg-icons"
@@ -12,7 +13,6 @@ import { projects } from '@/public/js/projects';
 import styles from '../styles/blogsprojects.module.css'
 
 const Projects = () => {
-    const [classname] = useState('');
     const [indexes, setIndexes] = useState<{ [key: number]: number }>({});
 
 
@@ -44,6 +44,20 @@ const Projects = () => {
         })
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const getSwipeHandlers = (project: any) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        return useSwipeable({
+          onSwipedLeft: () => ahead(project.id),
+          onSwipedRight: () => back(project.id)
+        });
+    };
+
+    /*const handlers = useSwipeable({
+        onSwipedLeft: () => ahead(project.id),
+        onSwipedRight: () => back(project.id)
+    });*/
+
     return (
         <div className={styles.workmain}>
             {
@@ -54,24 +68,7 @@ const Projects = () => {
                     const projectStyle = {
                         backgroundImage: "url('" + projectPhotoSrc + "')",
                     };
-                    /*const ahead = () => {
-                        if (index === 3) {
-                          setIndex(1)
-                          setClassname('Project' + project.id + '_' + index)
-                        } else {
-                          setIndex(index + 1)
-                          setClassname('Project' + project.id + '_' + index)
-                        }
-                    }
-                    const back = () => {
-                        if (index === 1) {
-                          setIndex(3)
-                          setClassname('project' + project.id + '_' + index)
-                        } else {
-                          setIndex(index - 1)
-                          setClassname('project' + project.id + '_' + index)
-                        }
-                    }*/
+                    const handlers = getSwipeHandlers(project);
                     return (
                         <div className={styles.projectitem} key={project.id}>
                             <div className={styles.parentofparentcard}>
@@ -92,8 +89,8 @@ const Projects = () => {
                                             }
                                         </HStack>
                                     </div>
-                                    <div className={styles.imageandsocials}>
-                                        <div className={`${styles.card} ${classname}`} style={projectStyle}>
+                                    <div className={styles.imageandsocials} {...handlers}>
+                                        <div className={styles.card} style={projectStyle}>
                                             <div className={styles.arrows} style={{ color: 'lightgray' }}>
                                                 <p onClick={() => back(project.id)}>&lt;</p>
                                                 <p onClick={() => ahead(project.id)}>&gt;</p>
