@@ -1,14 +1,34 @@
-import styles from '../styles/blogsprojects.module.css'
+import Link from 'next/link'
+import { useState } from 'react';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faWebAwesome } from "@fortawesome/free-brands-svg-icons"
-import Link from 'next/link'
 import { HStack, Tag } from "@chakra-ui/react"
-import { toaster } from "@/src/components/ui/toaster";
 
+import { toaster } from "@/src/components/ui/toaster";
+import { Tooltip } from "@/src/components/ui/tooltip"
 import { projects } from '@/public/js/projects';
 
+import styles from '../styles/blogsprojects.module.css'
+
 const Projects = () => {
-    //const toast = useToast()
+    const [classname] = useState('');
+    const [indexes, setIndexes] = useState<{ [key: number]: number }>({});
+
+
+    const ahead = (projectId: number) => {
+        setIndexes((prevIndexes) => ({
+            ...prevIndexes,
+            [projectId]: (prevIndexes[projectId] || 1) % 3 + 1,
+        }));
+    };
+
+    const back = (projectId: number) => {
+        setIndexes((prevIndexes) => ({
+            ...prevIndexes,
+            [projectId]: (prevIndexes[projectId] || 1) - 1 || 3,
+        }));
+    };
 
     const showGitToast = () => {
         toaster.create({
@@ -28,6 +48,30 @@ const Projects = () => {
         <div className={styles.workmain}>
             {
                 projects.map((project) => {
+                    const projectIndex = indexes[project.id] || 1;
+                    const projectPhoto = project.photos[projectIndex - 1];
+                    const projectPhotoSrc = projectPhoto.src;
+                    const projectStyle = {
+                        backgroundImage: "url('" + projectPhotoSrc + "')",
+                    };
+                    /*const ahead = () => {
+                        if (index === 3) {
+                          setIndex(1)
+                          setClassname('Project' + project.id + '_' + index)
+                        } else {
+                          setIndex(index + 1)
+                          setClassname('Project' + project.id + '_' + index)
+                        }
+                    }
+                    const back = () => {
+                        if (index === 1) {
+                          setIndex(3)
+                          setClassname('project' + project.id + '_' + index)
+                        } else {
+                          setIndex(index - 1)
+                          setClassname('project' + project.id + '_' + index)
+                        }
+                    }*/
                     return (
                         <div className={styles.projectitem} key={project.id}>
                             <div className={styles.parentofparentcard}>
@@ -39,7 +83,7 @@ const Projects = () => {
                                                 project.tech.map((tech) => {
                                                     return (
                                                         <div key={tech}>
-                                                            <Tag.Root size="sm" borderRadius="md" variant="subtle">
+                                                            <Tag.Root size="sm" borderRadius="md" variant="subtle" colorPalette="purple">
                                                                 <Tag.Label>{tech}</Tag.Label>
                                                             </Tag.Root>
                                                         </div>
@@ -49,19 +93,23 @@ const Projects = () => {
                                         </HStack>
                                     </div>
                                     <div className={styles.imageandsocials}>
-                                        <div className={styles.card}>
-                                            <div className={styles.arrows} style={{color: 'black'}}>
-                                                <p onClick={() => alert('clicked back')}>&lt;</p>
-                                                <p onClick={() => alert('clicked ahead')}>&gt;</p>
+                                        <div className={`${styles.card} ${classname}`} style={projectStyle}>
+                                            <div className={styles.arrows} style={{ color: 'lightgray' }}>
+                                                <p onClick={() => back(project.id)}>&lt;</p>
+                                                <p onClick={() => ahead(project.id)}>&gt;</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <div className={styles.socialIcon}>
-                                                {project.githubLink !== '' ? <Link href={project.githubLink}><FontAwesomeIcon icon={faGithub} /></Link> : <FontAwesomeIcon icon={faGithub} onClick={showGitToast}/>}
-                                            </div>
-                                            <div className={styles.socialIcon}>
-                                                {project.projectLink !== '' ? <Link href={project.projectLink}><FontAwesomeIcon icon={faWebAwesome} /></Link> : <FontAwesomeIcon icon={faWebAwesome} onClick={showProjectToast}/>}
-                                            </div>
+                                            <Tooltip content="Github link" positioning={{ placement: "right-end" }}>
+                                                <div className={styles.socialIcon}>
+                                                    {project.githubLink !== '' ? <Link href={project.githubLink}><FontAwesomeIcon icon={faGithub} /></Link> : <FontAwesomeIcon icon={faGithub} onClick={showGitToast}/>}
+                                                </div>
+                                            </Tooltip>
+                                            <Tooltip content="Project link" positioning={{ placement: "right-end" }}>
+                                                <div className={styles.socialIcon}>
+                                                    {project.projectLink !== '' ? <Link href={project.projectLink}><FontAwesomeIcon icon={faWebAwesome} /></Link> : <FontAwesomeIcon icon={faWebAwesome} onClick={showProjectToast}/>}
+                                                </div>
+                                            </Tooltip>
                                         </div>
                                     </div>
                                     {/* <div className={styles.cardbottom}>

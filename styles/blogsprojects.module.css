@@ -21,15 +21,15 @@
 .card{
     height: 25vmin;
     width: 60vmin;
-    background-color: pink;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 100%;
+    background-position: center;
     border: 2px solid;
     border-color: #363537;
     display: flex;
     flex-direction:column;
     justify-content:center;
+    padding: 0.2rem;
 }
 
 .arrows{
