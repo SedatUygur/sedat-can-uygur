@@ -15,7 +15,7 @@ export default function About() {
     }, []);
     return (
         <div className={styles.page}>
-            <div className={styles.workHeading}>Blogs</div>
+            {/* <div className={styles.workHeading}>Blogs</div> */}
             {
                 blogList ? <Carousel>
                     {blogList.map((blog, key) => {

@@ -5,6 +5,8 @@
 
 .navbar{
   z-index: 50;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .navlinks {

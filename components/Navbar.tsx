@@ -1,7 +1,9 @@
-import { Icon, Switch, useMediaQuery } from '@chakra-ui/react'
-import { FaMoon, FaSun } from 'react-icons/fa'
-import NavLinks from './NavLinks'
 
+import { useState, useEffect } from 'react'
+import { FaMoon, FaSun } from 'react-icons/fa'
+import { Icon, Switch, useMediaQuery } from '@chakra-ui/react'
+
+import NavLinks from './NavLinks'
 import styles from '../styles/navbar.module.css'
 
 interface NavbarProps {
@@ -15,8 +17,23 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
         ssr: true,
         fallback: [false], // return false on the server and re-evaluate on the client side
     });
+    const [sticky, setSticky] = useState(false)
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 0) {
+            setSticky(true);
+        } else {
+            setSticky(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
     return (
-        <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow, padding: !drawerVisible ? '0.9rem 5rem 1.3rem 5rem' : '0.5rem' }}>
+        <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow, padding: !drawerVisible ? '0.9rem 5rem 1.3rem 5rem' : '0.5rem', position: sticky ? 'fixed' : 'static' }}>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline', marginBottom: !drawerVisible ? '0' : '10px' }}>
                 <h2 className={styles.logo}>Sedat Can Uygur</h2>
                 { !drawerVisible

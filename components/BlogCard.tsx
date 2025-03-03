@@ -17,7 +17,7 @@ const BlogCard = ({ blog }) => {
                             blog.categories.slice(0, 3).map((category:any, key:any) => {
                                 return (
                                     <div key={key}>
-                                        <Tag.Root size="sm" borderRadius="md" variant="outline" colorScheme="blue">
+                                        <Tag.Root size="sm" borderRadius="md" variant="outline" colorPalette="purple">
                                             <Tag.Label>{category}</Tag.Label>
                                         </Tag.Root>
                                     </div>
