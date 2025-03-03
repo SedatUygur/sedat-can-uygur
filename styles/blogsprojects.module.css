@@ -19,15 +19,17 @@
 }
 
 .card{
-    height: 35vh;
-    width: 60vh;
+    height: 25vmin;
+    width: 60vmin;
     background-color: pink;
-    border: 2px solid black;
-    padding: 0.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    border: 2px solid;
+    border-color: #363537;
     display: flex;
     flex-direction:column;
     justify-content:center;
-    margin: 0.5rem 0;
 }
 
 .arrows{
@@ -40,12 +42,12 @@
 .cardtitle{
     display: flex;
     justify-content: space-between;
-    width: 60vh;
+    width: 60vmin;
 }
 
 .cardbottom{
     display: flex;
-    width: 60vh;
+    width: 60vmin;
     align-items: center;
 }
 
@@ -55,17 +57,19 @@
     height: 2.5rem;
     width: 2.5rem;
     margin: 1rem 0 1rem 1rem;
+    cursor: pointer;
+    color: #707070;
+    border-color: #707070;
 }
 
 .projtitle{
-    font-size: 30px;
+    font-size: 20px;
     letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .projdescription{
-    width: 50%;
     font-size: 14px;
 }
 
@@ -78,25 +82,73 @@
     font-size: 14px;
 }
 
+.workmain{
+    padding: 0 20vw;
+    color: #707070;
+}
+
+.projectitem {
+    height: 30vmin;
+    width: 60vmin;
+}
+
+.parentofparentcard{
+    display: flex;
+}
+
 @media only screen and (max-width: 850px){
     .workheading{
-      font-size: 45px;
+        font-size: 45px;
+    }
+    .parentofparentcard{
+        display: block;
+    }
+    .parentcard{
+        margin: 2rem auto;
+    }
+    .workmain{
+        padding: 0 10vw;
     }
 }
 
-@media only screen and (max-width: 535px){
-    .workheading{
-      font-size: 40px;
+@media only screen and (max-width: 600px){
+    .workmain{
+        padding: 0;
     }
-}
-
-@media only screen and (max-width: 500px){
-    .workheading{
+    .workHeading{
         font-size:35px;
         padding: 1rem;
+    }
+    .projtitle{
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+    .cardtitle{
+        display: block;
+    }
+    .card{
+        height: 45vmin;
+        width: 70vmin;
+    }
+    .projdescription{
+        font-size: 12px;
+    }
+    .socialIcon{
+        padding: 0.3rem;
+        height: 2rem;
+        width: 2rem;
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    
+    .workmain{
+        color: #D0D0D0;
+    }
+    .card{
+        border-color: #FAFAFA;
+    }
+    .socialIcon{
+        color: #D0D0D0;
+        border-color: #D0D0D0;
+    }
 }
