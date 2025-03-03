@@ -17,6 +17,9 @@ const NavLinks = () => {
                 <Link href='/projects'>Projects</Link>
             </div>
             <div className={styles.navlinks}>
+                <Link href='/blog'>Blog</Link>
+            </div>
+            <div className={styles.navlinks}>
                 <Link href='/contact'>Contact</Link>
             </div>
         </>
