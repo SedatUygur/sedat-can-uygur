@@ -46,9 +46,7 @@
 }
 
 .cardbottom{
-    display: flex;
     width: 60vmin;
-    align-items: center;
 }
 
 .socialIcon{
@@ -73,15 +71,6 @@
     font-size: 14px;
 }
 
-.cta{
-    padding: 0.3rem 2rem;
-    border-radius: 50px;
-    border: 1px solid red;
-    margin-left: 0.5rem;
-    color: red;
-    font-size: 14px;
-}
-
 .blogHeading{
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -95,7 +84,7 @@
 }
 
 .projectitem {
-    height: 35vmin;
+    height: 30vmin;
     width: 60vmin;
 }
 
@@ -192,7 +181,7 @@
         display: block;
     }
     .card{
-        height: 45vmin;
+        height: 40.8333vmin;
         width: 70vmin;
     }
     .cardbottom{

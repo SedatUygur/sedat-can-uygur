@@ -5,6 +5,7 @@
 
 .navbar{
   z-index: 50;
+  padding: 0.9rem 5rem 1.3rem 5rem;
   width: -webkit-fill-available;
   width: -moz-available;
 }
@@ -46,7 +47,9 @@
   .logo{
     font-size: 20px;
   }
-
+  .navbar{
+    padding: 0.5rem;
+  }
   .navlinks {
     padding: 0.5rem;
     font-size: 12px;

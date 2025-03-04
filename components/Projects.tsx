@@ -79,7 +79,7 @@ const Projects = () => {
                     };
                     const handlers = getSwipeHandlers(project);
                     return (
-                        <div className={styles.projectitem} key={project.id} data-aos="flip-up">
+                        <div className={styles.projectitem} key={project.id} data-aos="fade-up">
                             <div className={styles.parentofparentcard} id={project.id.toString()}>
                                 <div className={styles.parentcard}>
                                     <div className={styles.cardtitle}>
