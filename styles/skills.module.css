@@ -46,6 +46,17 @@
     transform: translateY(-5px);
 }
 
+.cta4{
+    padding: 0.4rem 2.5rem;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+    font-size: 16px;
+}
+  
+.cta4:hover{
+    transform: translateY(-5px);  
+}
+
 @media only screen and (max-width: 850px){
     .workheading{
       font-size: 45px;

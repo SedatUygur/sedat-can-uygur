@@ -71,7 +71,7 @@ const Projects = () => {
                     const handlers = getSwipeHandlers(project);
                     return (
                         <div className={styles.projectitem} key={project.id}>
-                            <div className={styles.parentofparentcard}>
+                            <div className={styles.parentofparentcard} id={project.id.toString()}>
                                 <div className={styles.parentcard}>
                                     <div className={styles.cardtitle}>
                                         <h1 className={styles.projtitle}>{project.name}</h1>

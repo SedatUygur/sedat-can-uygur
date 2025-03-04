@@ -13,10 +13,10 @@ const HomeProject = ({ project }: { project: Project }) => {
     return (
         <div className={styles.projectmain}>
             <div className={styles.projectContent}>
-                <div className={styles.projectIcon}><FontAwesomeIcon icon={faTelegramPlane} /></div>
+                <div className={styles.projectIcon}><Link href='/projects'><FontAwesomeIcon icon={faTelegramPlane} /></Link></div>
                 <h1 className={styles.projectTitle}>{project.name}</h1>
                 <h2 className={styles.projectSubTitle}>{project.description}</h2>
-                <Link className={styles.cta2} href="#">View More</Link>
+                <Link className={styles.cta2} href='/projects'>View More</Link>
             </div>
         </div>
     )
