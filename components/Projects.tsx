@@ -13,8 +13,15 @@ import { projects } from '@/public/js/projects';
 import styles from '../styles/blogsprojects.module.css'
 
 const Projects = () => {
-    const [indexes, setIndexes] = useState<{ [key: number]: number }>({});
+    const projectsPerPage = 3;
+    const totalPages = Math.ceil(projects.length / projectsPerPage);
 
+    const [indexes, setIndexes] = useState<{ [key: number]: number }>({});
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const handlePageChange = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    };
 
     const ahead = (projectId: number) => {
         setIndexes((prevIndexes) => ({
@@ -61,7 +68,9 @@ const Projects = () => {
     return (
         <div className={styles.workmain}>
             {
-                projects.map((project) => {
+                projects
+                .slice((currentPage - 1) * projectsPerPage, currentPage * projectsPerPage)
+                .map((project) => {
                     const projectIndex = indexes[project.id] || 1;
                     const projectPhoto = project.photos[projectIndex - 1];
                     const projectPhotoSrc = projectPhoto.src;
@@ -118,6 +127,19 @@ const Projects = () => {
                     )
                 })
             }
+            <div className={styles.pagination}>
+                {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => handlePageChange(i + 1)}
+                        className={`${styles.pageButton} ${
+                        currentPage === i + 1 ? styles.activePage : ""
+                        }`}
+                    >
+                        {i + 1}
+                    </button>
+                ))}
+            </div>
         </div>
     )
 }

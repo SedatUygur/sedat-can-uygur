@@ -95,7 +95,7 @@
 }
 
 .projectitem {
-    height: 30vmin;
+    height: 35vmin;
     width: 60vmin;
 }
 
@@ -140,6 +140,25 @@
 .cta2{
     font-size: 14px;
     text-decoration: underline;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.pageButton {
+    background-color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+.activePage {
+    background-color: #333;
+    color: #fff;
 }
 
 @media only screen and (max-width: 850px){
