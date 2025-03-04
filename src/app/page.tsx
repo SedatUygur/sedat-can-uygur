@@ -7,6 +7,7 @@ import { faGoogleDrive } from "@fortawesome/free-brands-svg-icons"
 import HomeProject from '@/components/HomeProject';
 import Skills from '@/components/Skills';
 import { projects } from '@/public/js/projects';
+import { userInfo } from '@/public/js/userInfo';
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -14,8 +15,8 @@ export default function Home() {
   return (
     <div>
       <div className={styles.page}>
-          <h1 className={styles.heading}>Hey there, I am Sedat Can.</h1>
-          <h2 className={styles.subheading}>With over 8 years of professional experience, I am driven to leverage my expertise in full-stack development to deliver scalable, high-quality, microservice architecture applications.</h2>
+          <h1 className={styles.heading}>{userInfo.greeting.title}</h1>
+          <h2 className={styles.subheading}>{userInfo.greeting.subtitle}</h2>
           <Link className={styles.workLink} href="/projects">My projects</Link>
       </div>
       <div className={styles.homeWorkSection} id="work">
@@ -35,14 +36,11 @@ export default function Home() {
         <Skills />
       </div>
       <div id="about" className={styles.homeAboutSection}>
-        <h1 className={styles.workheading} data-aos="fade-up">About Me</h1>
-        <p className={styles.aboutText} data-aos="fade-up">Hi I am Sedat Can Uygur. I’ve been a full-stack engineer for over 8 years, working with a variety of technologies, including C#, Java, Python, JavaScript, and TypeScript. I started my career focusing on back-end 
-systems, especially in .NET, but over time I expanded to front-end frameworks like Angular and React. In my recent roles, I’ve worked on projects for global brands such as Under Armour and SSS, where I developed 
-scalable microservices and integrated multiple APIs. For the past couple of years, I’ve also gained experience with cloud platforms—AWS and Azure—using Docker and Kubernetes to containerize and orchestrate 
-microservices. This experience feels highly relevant on cloud-native applications and modern architectures.</p>
+        <h1 className={styles.workheading} data-aos="fade-up">{userInfo.about.title}</h1>
+        <p className={styles.aboutText} data-aos="fade-up">{userInfo.about.description}</p>
         <div data-aos="fade-up" style={{ textAlign: 'center', padding: '1rem 0', margin: '1rem 0', position: 'relative', display: 'flex' }}>
           {/* color: currentTheme.subtext add it to div and link */}
-          <Link className={styles.cta4} href="https://drive.google.com/file/d/1Dv3THOjyz7-zV9br9arOeyltCt_3Rvng/view?usp=sharing" target="_blank" style={{ alignItems: 'center', background: 'transparent', border: `2px solid`, display: 'flex' }}>Resume&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon width="15px" height="15px" icon={faGoogleDrive} /></Link>
+          <Link className={styles.cta4} href={userInfo.about.resume} target="_blank" style={{ alignItems: 'center', background: 'transparent', border: `2px solid`, display: 'flex' }}>Resume&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon width="15px" height="15px" icon={faGoogleDrive} /></Link>
         </div>
       </div>
     </div>

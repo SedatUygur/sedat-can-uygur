@@ -36,7 +36,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100%;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 @media (prefers-color-scheme: dark) {
