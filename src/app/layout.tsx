@@ -1,13 +1,15 @@
 "use client";
 
+import AOS from "aos";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { defaultSystem, ChakraProvider } from "@chakra-ui/react";
 
 import { lightTheme, darkTheme, GlobalStyles } from "@/styles/ThemeConfig";
 
 import "./globals.css";
+import "aos/dist/aos.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -33,6 +35,13 @@ export default function RootLayout({
     setTheme(nextTheme)
   }
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500
+    });
+  }, []);
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

@@ -1,4 +1,4 @@
-
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { Icon, Switch, useMediaQuery } from '@chakra-ui/react'
@@ -35,7 +35,7 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
     return (
         <div className={styles.navbar} style={{ backgroundColor: currentTheme.secondary, boxShadow: currentTheme.boxShadow, padding: !drawerVisible ? '0.9rem 5rem 1.3rem 5rem' : '0.5rem', position: sticky ? 'fixed' : 'static' }}>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline', marginBottom: !drawerVisible ? '0' : '10px' }}>
-                <h2 className={styles.logo}>Sedat Can Uygur</h2>
+                <Link href='/'><h2 className={styles.logo}>Sedat Can Uygur</h2></Link>
                 { !drawerVisible
                     ? <div style={{ display: 'flex' }}>
                         <NavLinks />

@@ -4,6 +4,10 @@
     color: #75cac3;
 }
 
+.cta2:hover{
+  transform: translateY(-5px);
+}
+
 .projectmain{
     width: 45%;
     margin: 4rem auto;

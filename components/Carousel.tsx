@@ -60,7 +60,7 @@ const Carousel = ({ children }) => {
     });
 
     return (
-        <div {...handlers} className={styles.carousel} id="blogs">
+        <div {...handlers} className={styles.carousel} data-aos="fade-up" id="blogs">
             {/* style={{ backgroundColor: currentTheme.secondary }} */}
             <div className={styles.blogHeading}>My favorite blogs on Medium</div>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)`}} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
