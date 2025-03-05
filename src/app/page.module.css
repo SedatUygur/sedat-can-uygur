@@ -6,9 +6,6 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  /*display: grid;
-  grid-template-rows: 20px 1fr 20px;*/
-  /*padding: 80px;*/
   align-items: center;
   justify-items: center;
   min-height: 100svh;
@@ -37,37 +34,6 @@
     background-size: cover;
     background-position: 100%;
     opacity: 0.4;
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    background-color: #263859;
-  }
-  .subheading{
-    color: #D0D0D0;
-  }
-  .workLink{
-    background-color: #d7f7f5;
-    color: #101010;
-  }
-  .homeSkillSection{
-    background-color: #263859;
-  }
-  .logo {
-    filter: invert();
-  }
-  .homeAboutSection{
-    background-color: #263859;
-  }
-  .aboutText{
-    color: #D0D0D0;
-  }
 }
 
 .heading{
@@ -146,60 +112,6 @@
   margin-top: 1rem;
   color: #707070;
   position: relative;
-}
-
-@media only screen and (max-width: 850px){
-  .page {
-    padding: 0 15vw;
-  }
-  .heading {
-    font-size: 35px;
-  }
-  .subheading {
-    font-size: 17px;
-  }
-  .workLink {
-    padding: 0.3rem 1.7rem;
-    margin-top: 1rem;
-    font-size: 15px;
-  }
-  .workheading{
-    font-size: 45px;
-  }
-  .aboutText{
-    text-align: left;
-    width: 70%;
-    position: static;
-  }
-}
-
-@media only screen and (max-width: 535px){
-  .page{
-    height: 70vh;
-    padding: 0 10vw;
-  }
-  .heading{
-    font-size: 22px;
-  }
-  .subheading{
-    font-size: 15px;
-  }
-  .homeWorkSection{
-    padding: 1rem;
-  }
-  .homeSkillSection{
-    padding: 2rem 1rem;
-  }
-  .workheading{
-    font-size: 40px;
-  }
-  .homeAboutSection{
-    height: 80vh;
-  }
-  .aboutText{
-    text-align: left;
-    width: 100%;
-  }
 }
 
 .main {
@@ -283,6 +195,163 @@ a.secondary {
   flex-shrink: 0;
 }
 
+.educationWrapper{
+  padding: 4rem 0;
+  padding-bottom: 2rem;
+}
+.content{
+  padding-bottom:20px;
+}
+.educationDepartment{
+  color: #263859;
+}
+.educationGPA{
+  color: #707070;
+}
+.educationSchool{
+  color: #363537;
+}  
+/* timeline styles */
+.timeline{
+  position:relative;
+  margin:2rem auto;
+  padding:40px 0;
+  width: 60vw;
+  box-sizing:border-box;
+}
+.timeline:before{
+  content:'';
+  position:absolute;
+  left:50%;
+  width:2px;
+  height:85%;
+  background:#a8a8a8;
+}
+.timeline ul{
+  padding:0;
+  margin:0;
+}
+.timeline ul li{
+  list-style:none;
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+  box-sizing:border-box;
+}
+.timeline ul li:nth-child(odd){
+  float:left;
+  text-align:right;
+  clear:both;
+}
+.timeline ul li:nth-child(even){
+  float:right;
+  text-align:left;
+  clear:both;
+}
+.timeline ul li:nth-child(odd):before
+{
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  top:24px;
+  right:-6px;
+  background:#a8a8a8;
+  border-radius:50%;
+}
+.timeline ul li:nth-child(even):before
+{
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  top:24px;
+  left:-4px;
+  background:#a8a8a8;
+  border-radius:50%;
+}
+.timeline ul li p{
+  margin:10px 0 0;
+  padding:0;
+  font-size: 14px;
+}
+.timeline ul li .time h4{
+  margin:0;
+  padding:0;
+  font-size:14px;
+}
+.timeline ul li:nth-child(odd) .time
+{
+  position:absolute;
+  top:12px;
+  right:-165px;
+  margin:0;
+  width: 150px;
+  text-align: center;
+  padding:8px 16px;
+  border-radius:18px;
+  color: #FAFAFA;
+  background: #263859;
+}
+.timeline ul li:nth-child(even) .time
+{
+  position:absolute;
+  top:12px;
+  left:-165px;
+  width: 150px;
+  text-align: center;
+  margin:0;
+  padding:8px 16px;
+  border-radius:18px;
+  color: #FAFAFA;
+  background: #263859;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+    background-color: #263859;
+  }
+  .subheading{
+    color: #D0D0D0;
+  }
+  .workLink{
+    background-color: #d7f7f5;
+    color: #101010;
+  }
+  .homeSkillSection{
+    background-color: #263859;
+  }
+  .logo {
+    filter: invert();
+  }
+  .homeAboutSection{
+    background-color: #263859;
+  }
+  .aboutText{
+    color: #D0D0D0;
+  }
+  .time
+  {
+    color: #101010;
+    background: #d7f7f5;
+  }
+  .educationDepartment{
+    color: #d7f7f5;
+  }
+  .educationSchool{
+    color: #FAFAFA;
+  }
+  .educationGPA{
+    color: #D0D0D0;
+  }
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
@@ -298,6 +367,66 @@ a.secondary {
   .footer a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .timeline{
+      width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 850px){
+  .page {
+    padding: 0 15vw;
+  }
+  .heading {
+    font-size: 35px;
+  }
+  .subheading {
+    font-size: 17px;
+  }
+  .workLink {
+    padding: 0.3rem 1.7rem;
+    margin-top: 1rem;
+    font-size: 15px;
+  }
+  .workheading{
+    font-size: 45px;
+  }
+  .aboutText{
+    text-align: left;
+    width: 70%;
+    position: static;
+  }
+  .timeline{
+    width: 90vw;
+    padding-bottom: 0;
+  }
+
+  .timeline:before{
+    left:20px;
+    top: 10px;
+    height:90%;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even)
+  {
+    width:100%;
+    text-align:left;
+    padding-bottom:50px;
+  }
+  .timeline ul li:nth-child(odd):before,
+  .timeline ul li:nth-child(even):before
+  {
+    top:-18px;
+    left:16px;
+  }
+  .timeline ul li:nth-child(odd) .time,
+  .timeline ul li:nth-child(even) .time{
+    top:-30px;
+    left:50px;
+    right:inherit;
   }
 }
 
@@ -333,5 +462,34 @@ a.secondary {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 535px){
+  .page{
+    height: 70vh;
+    padding: 0 10vw;
+  }
+  .heading{
+    font-size: 22px;
+  }
+  .subheading{
+    font-size: 15px;
+  }
+  .homeWorkSection{
+    padding: 1rem;
+  }
+  .homeSkillSection{
+    padding: 2rem 1rem;
+  }
+  .workheading{
+    font-size: 40px;
+  }
+  .homeAboutSection{
+    height: 80vh;
+  }
+  .aboutText{
+    text-align: left;
+    width: 100%;
   }
 }

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogleDrive } from "@fortawesome/free-brands-svg-icons"
 
+import Education from '@/components/Education';
 import HomeProject from '@/components/HomeProject';
 import Skills from '@/components/Skills';
 import { projects } from '@/public/js/projects';
@@ -34,6 +35,9 @@ export default function Home() {
       </div>
       <div id="skills" className={styles.homeSkillSection}>
         <Skills />
+      </div>
+      <div>
+        <Education />
       </div>
       <div id="about" className={styles.homeAboutSection}>
         <h1 className={styles.workheading} data-aos="fade-up">{userInfo.about.title}</h1>
