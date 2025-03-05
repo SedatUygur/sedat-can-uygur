@@ -18,7 +18,7 @@ export default function About() {
             {/* <div className={styles.workHeading}>Blogs</div> */}
             {
                 blogList ? <Carousel>
-                    {blogList.map((blog, key) => {
+                    {blogList.slice(0,6).map((blog, key) => {
                         return (
                             <CarouselItem key={key} width={undefined}>
                                 <BlogCard blog={blog} />

@@ -2,8 +2,9 @@
 
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
-import { sendEmail } from '@/lib/send-email';
 
+import { sendEmail } from '@/lib/send-email';
+import { userInfo } from '@/public/js/userInfo';
 import styles from '../styles/contactform.module.css';
 
 export type FormData = {
@@ -24,63 +25,63 @@ const ContactForm: FC = () => {
     <form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.divMarginBottom}>
         <label
-          htmlFor='name'
+          htmlFor={userInfo.contact.name.htmlFor}
           className={styles.label}
         >
-          Full Name
+          {userInfo.contact.name.label}
         </label>
         <input
           type='text'
-          placeholder='Full Name'
+          placeholder={userInfo.contact.name.placeholder}
           className={styles.nameAndEmail}
           {...register('name', { required: true })}
         />
       </div>
       <div className={styles.divMarginBottom}>
         <label
-          htmlFor='email'
+          htmlFor={userInfo.contact.email.htmlFor}
           className={styles.label}
         >
-          Email Address
+          {userInfo.contact.email.label}
         </label>
         <input
-          type='email'
-          placeholder='example@domain.com'
+          type={userInfo.contact.email.htmlFor}
+          placeholder={userInfo.contact.email.placeholder}
           className={styles.nameAndEmail}
           {...register('email', { required: true })}
         />
       </div>
       <div className={styles.divMarginBottom}>
         <label
-          htmlFor='phone'
+          htmlFor={userInfo.contact.phone.htmlFor}
           className={styles.label}
         >
-          Phone
+          {userInfo.contact.phone.label}
         </label>
         <input
           type='tel'
-          placeholder='+1 (555) 555-5555'
+          placeholder={userInfo.contact.phone.placeholder}
           className={styles.nameAndEmail}
           {...register('phone', { required: true })}
         />
       </div>
       <div className={styles.divMarginBottom}>
         <label
-          htmlFor='message'
+          htmlFor={userInfo.contact.message.htmlFor}
           className={styles.label}
         >
-          Message
+          {userInfo.contact.message.label}
         </label>
         <textarea
           rows={4}
-          placeholder='Type your message'
+          placeholder={userInfo.contact.message.placeholder}
           className={styles.message}
           {...register('message', { required: true })}
         ></textarea>
       </div>
       <div>
         <button className={styles.submit}>
-          Submit
+          {userInfo.contact.submit}
         </button>
       </div>
     </form>

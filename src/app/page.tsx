@@ -15,16 +15,16 @@ export default function Home() {
   return (
     <div>
       <div className={styles.page}>
-          <h1 className={styles.heading}>{userInfo.greeting.title}</h1>
-          <h2 className={styles.subheading}>{userInfo.greeting.subtitle}</h2>
+          <h1 className={styles.heading}>{userInfo.home.title}</h1>
+          <h2 className={styles.subheading}>{userInfo.home.subtitle}</h2>
           <Link className={styles.workLink} href="/projects">My projects</Link>
       </div>
       <div className={styles.homeWorkSection} id="work">
           <h1 className={styles.workheading} data-aos="fade-up">Projects</h1>
           {
-              projects.slice(0, 3).map((project) => {
+              projects.slice(0, 3).map((project, key) => {
                   return (
-                      <div key={project.id} data-aos="fade-up">
+                      <div key={key} data-aos="fade-up">
                           <HomeProject project={project} />
                       </div>
                   )

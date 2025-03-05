@@ -70,7 +70,7 @@ const Projects = () => {
             {
                 projects
                 .slice((currentPage - 1) * projectsPerPage, currentPage * projectsPerPage)
-                .map((project) => {
+                .map((project, key) => {
                     const projectIndex = indexes[project.id] || 1;
                     const projectPhoto = project.photos[projectIndex - 1];
                     const projectPhotoSrc = projectPhoto.src;
@@ -79,7 +79,7 @@ const Projects = () => {
                     };
                     const handlers = getSwipeHandlers(project);
                     return (
-                        <div className={styles.projectitem} key={project.id} data-aos="fade-up">
+                        <div className={styles.projectitem} key={key} data-aos="fade-up">
                             <div className={styles.parentofparentcard} id={project.id.toString()}>
                                 <div className={styles.parentcard}>
                                     <div className={styles.cardtitle}>
