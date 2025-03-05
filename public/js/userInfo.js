@@ -1,4 +1,4 @@
-import { title } from "process";
+import { faGithub, faSquareXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 export const userInfo = {
     about: {
@@ -10,7 +10,7 @@ export const userInfo = {
         email: {
             htmlFor: "email",
             label: "Email Address",
-            placeholder: "example@domain.com"
+            placeholder: "sedat.uygur@outlook.com"
         },
         message: {
             htmlFor: "message",
@@ -23,9 +23,10 @@ export const userInfo = {
             placeholder: "Full Name"
         },
         phone: {
+            countryCode: '+90',
             htmlFor: "phone",
             label: "Phone",
-            placeholder: "+1 (555) 555-5555"
+            placeholder: "(545) 825-7262"
         },
         submit: "Submit"
     },
@@ -74,6 +75,23 @@ export const userInfo = {
         title: "Hey there, I am Sedat Can.",
         subtitle: "Innovative and results-driven Senior Software Engineer with over 8 years of experience in full‑stack development, software architecture. Expert at designing and implementing resilient, scalable systems using microservices, cloud technologies and modern DevOps practices."
     },
+    mainSocials: [
+        {
+            label: "Github",
+            href: "https://github.com/SedatUygur",
+            icon: faGithub,  
+        },
+        {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/in/sedat-can-uygur",
+            icon: faLinkedin
+        },
+        {
+            label: "Twitter",
+            href: "https://x.com/_SedatUygur",
+            icon: faSquareXTwitter
+        }
+    ],
     skills: {
         contact: {
             label: "Get in touch",
