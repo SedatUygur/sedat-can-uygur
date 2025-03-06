@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 import styles from '@/styles/skills.module.css'
-import { userInfo } from '@/public/js/userInfo';
+import { ctaTexts, headings,userInfo } from '@/public/js/userInfo';
 
 const Skills = () => {
     return (
         <>
-          <h1 className={styles.workheading} data-aos="fade-up">{userInfo.skills.title}</h1>
+          <h1 className={styles.workheading} data-aos="fade-up">{headings.skills}</h1>
           <div className={styles.skills}>
                 {userInfo.skills && userInfo.skills.capabilities ?
                     userInfo.skills.capabilities.map((value, index) => {
@@ -29,7 +29,7 @@ const Skills = () => {
                     }) : null
                 }
           </div>
-          <div style={{textAlign: 'center', padding: '1rem 0'}}><Link className={styles.cta3} href={userInfo.skills.contact.href}>{userInfo.skills.contact.label} <span>&gt;</span></Link></div>
+          <div style={{textAlign: 'center', padding: '1rem 0'}}><Link className={styles.cta3} href={userInfo.skills.contact.href}>{ctaTexts.capabCTA} <span>&gt;</span></Link></div>
         </>
     )
 }

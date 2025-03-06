@@ -94,7 +94,7 @@ export const userInfo = {
         title: "Hey there, I am Sedat Can.",
         subtitle: "Innovative and results-driven Senior Software Engineer with over 8 years of experience in full‑stack development, software architecture. Expert at designing and implementing resilient, scalable systems using microservices, cloud technologies and modern DevOps practices."
     },
-    mainSocials: [
+    socials: [
         {
             label: "Github",
             href: "https://github.com/SedatUygur",
@@ -177,16 +177,15 @@ export const userInfo = {
 }
 
 export const headings = {
-    workHomePage: 'Work',
-    workMainPage: 'Projects and Blogs',
-    capabilities: 'Capabilities',
+    workHomePage: 'Projects',
+    skills: 'Skills',
     about: 'About Me',
-    blogs: 'I write on Medium',
+    blogs: 'My favorite blogs on Medium',
     contact: 'Contact Me'
 }
 
 export const ctaTexts = {
-    landingCTA : 'My work',
+    landingCTA : 'My projects',
     workCTA: 'View All',
     capabCTA: 'Get in Touch',
     resumeCTA: 'Resume',

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { sendEmail } from '@/lib/send-email';
-import { userInfo } from '@/public/js/userInfo';
+import { ctaTexts, userInfo } from '@/public/js/userInfo';
 import styles from '../styles/contactform.module.css';
 
 export type FormData = {
@@ -84,7 +84,7 @@ const ContactForm: FC = () => {
         </div>
         <div>
           <button className={styles.submit}>
-            {userInfo.contact.submit}
+            {ctaTexts.submitBTN}
           </button>
         </div>
       </form>
@@ -98,8 +98,8 @@ const ContactForm: FC = () => {
           </div> : null
       }
       <div className={styles.socialIconDiv}>
-        {userInfo.mainSocials ?
-          userInfo.mainSocials.map((social, key) => {
+        {userInfo.socials ?
+          userInfo.socials.map((social, key) => {
             return (
               <div className={styles.socialIcon} key={key}>
                 <Link href={social.href}><FontAwesomeIcon icon={social.icon} /></Link>

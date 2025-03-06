@@ -1,7 +1,10 @@
-import styles from '../styles/blogsprojects.module.css'
-import React, { useState, useEffect } from 'react'
+
+import React, { useState, useEffect } from "react"
 import { useMediaQuery } from "@chakra-ui/react"
-import { useSwipeable } from "react-swipeable";
+import { useSwipeable } from "react-swipeable"
+
+import { headings } from '@/public/js/userInfo'
+import styles from '../styles/blogsprojects.module.css'
 
 export const CarouselItem = ({ children, width }) => {
     return (
@@ -24,7 +27,7 @@ const Carousel = ({ children }) => {
         fallback: [false],
     });
     const dividingFactor = isSmall ? isVerySmall ? 1 : 2 : 3
-    const arrayLength = Math.ceil(React.Children.count(children)/dividingFactor)
+    const arrayLength = Math.ceil(React.Children.count(children) / dividingFactor)
     const repeat = Array.from(Array(arrayLength).keys())
 
     useEffect(() => {
@@ -62,7 +65,7 @@ const Carousel = ({ children }) => {
     return (
         <div {...handlers} className={styles.carousel} data-aos="fade-up" id="blogs">
             {/* style={{ backgroundColor: currentTheme.secondary }} */}
-            <div className={styles.blogHeading}>My favorite blogs on Medium</div>
+            <div className={styles.blogHeading}>{headings.blogs}</div>
             <div className={styles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)`}} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
                 {React.Children.map(children, (child) => {
                     return React.cloneElement(child, { width:  isSmall ? isVerySmall ? '100%' : '50%' : '33.33%' });
