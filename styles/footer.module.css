@@ -45,25 +45,114 @@
     font-size: 16px;
 }
 
-@media (min-width: 768px) {
-    .flex {
-        flex-direction: row;
-    }
+.footerlogo{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
 
-    .linksSocialMedia {
-        margin-bottom: 0;
-    }
+.footermain{
+    padding: 2rem;
+    text-align: center;
+    background-color: #F0F0F0;
+    color: #707070;
+}
+  
+.footercontent{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 2rem;
+}
 
-    .copyright {
-        text-align: right;
+.footerbreak{
+    height: 1px;
+    border: none;
+    opacity: 0.5;
+    background-color: #707070;
+}
+  
+.footertable {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    margin: 2rem auto;
+    width: 80%;
+}
+  
+.footertable ul{
+    list-style: none;
+    text-align: left;
+}
+  
+.footertable li{
+    font-size: 14px;
+    margin: 0.2rem 0;
+    text-transform: capitalize;
+}
+  
+.footertable li:hover{
+    text-decoration: underline;
+}
+  
+.listHeading{
+    font-weight: bold;
+    font-size: 16px !important;
+}
+  
+.listHeading:hover{
+    text-decoration: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .footermain{
+        background-color: #16161D;
+        color: #D0D0D0;
+    }
+    .footerbreak{
+        background-color: #D0D0D0;
     }
 }
 
+@media (min-width: 768px) {
+  .flex {
+        flex-direction: row;
+  }
+
+  .linksSocialMedia {
+        margin-bottom: 0;
+  }
+
+  .copyright {
+        text-align: right;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .footerlogo{
+      font-size: 25px;
+  }
+  .footermain{
+      text-align: left;
+  }
+  .footertable {
+      display: block;
+      margin: 0 auto 2rem auto;
+      padding: 0 2rem;
+      width: 100%;
+  }
+  .footertable ul{
+      list-style: none;
+  }
+  .listHeading{
+      margin-top: 1.5rem !important;
+  }
+}
+
 @media only screen and (max-width: 380px){
-    .footerMain {
-      padding: 2rem 1rem;
-    }
-    .copyright {
+
+  .copyright {
       font-size: 14px;
-    }
+  }
+  .footertable {
+        padding: 0;
+  }
 }
