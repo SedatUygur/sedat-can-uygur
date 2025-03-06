@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from 'react';
 
-import styles from "../page.module.css";
 import BlogCard from '@/components/BlogCard';
 import Carousel, { CarouselItem } from "@/components/Carousel";
+import { userInfo } from '@/public/js/userInfo';
+import styles from "../page.module.css";
 
 export default function Blog() {
     const [blogList, setBlogList] = useState([]);
@@ -14,18 +15,19 @@ export default function Blog() {
             .catch(err => console.error(err));
     }, []);
     return (
-        <div className={styles.page}>
-            {
-                blogList ? <Carousel>
-                    {blogList.slice(0,6).map((blog, key) => {
-                        return (
-                            <CarouselItem key={key} width={undefined}>
-                                <BlogCard blog={blog} />
-                            </CarouselItem>
-                        )
-                    })}
-                </Carousel> : <p>Loading...</p>
-            }
-        </div>
+        userInfo.blogs.visible ? 
+            <div className={styles.page}>
+                {
+                    blogList ? <Carousel>
+                        {blogList.slice(0,6).map((blog, key) => {
+                            return (
+                                <CarouselItem key={key} width={undefined}>
+                                    <BlogCard blog={blog} />
+                                </CarouselItem>
+                            )
+                        })}
+                    </Carousel> : <p>Loading...</p>
+                }
+            </div> : null
     );
 }

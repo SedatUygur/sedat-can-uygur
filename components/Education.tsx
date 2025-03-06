@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { userInfo } from '@/public/js/userInfo'
+import { headings, ctaTexts, userInfo } from '@/public/js/userInfo'
 import styles from '@/src/app/page.module.css'
 
 const Education = () => {
     return (
         <div className={styles.educationWrapper}>
             <div className={styles.workheading} data-aos="fade-up">
-                {userInfo.education.title}
+                {headings.education}
             </div>
             <div className={styles.timeline}>
                 <ul>
@@ -29,10 +29,10 @@ const Education = () => {
                                 )
                             }) : null
                     }
-                    <div style={{ clear: 'both' }}></div>
+                    <div style={{ clear: 'inline-start' }}></div>
                 </ul>
             </div>
-            <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link href="/about" className={styles.cta3}>{userInfo.education.about}<span> &gt;</span></Link></div>
+            {/* <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link href="/about" className={styles.cta3}>{ctaTexts.educationCTA}<span> &gt;</span></Link></div> */}
         </div>
     )
 }

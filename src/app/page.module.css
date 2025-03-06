@@ -8,8 +8,8 @@
 
   align-items: center;
   justify-items: center;
-  /* min-height: 100svh;
-  height: 90vh; */
+  min-height: 100svh;
+  height: 90vh;
   gap: 10px;
   font-family: var(--font-geist-sans);
   width: 100%;
@@ -51,7 +51,7 @@
 
 .workLink{
   padding: 0.5rem 2.5rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
   position: relative;
   border-radius: 50px;
   transition: 0.2s ease-in-out;
@@ -92,16 +92,15 @@
   background-color: #d7f7f5;
 }
 
-.homeAboutSection::before{
+.homeAboutSection:after{
   content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* background-image: url('dark_about.jpg'); */
+    background-image: url('@/public/images/SedatCanUygur.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: 100%;
     opacity: 0.3;
 }
@@ -290,8 +289,8 @@ a.secondary {
   text-align: center;
   padding:8px 16px;
   border-radius:18px;
-  color: #FAFAFA;
-  background: #263859;
+  color: #263859;
+  border: 2px solid #263859;
 }
 .timeline ul li:nth-child(even) .time
 {
@@ -303,8 +302,8 @@ a.secondary {
   margin:0;
   padding:8px 16px;
   border-radius:18px;
-  color: #FAFAFA;
-  background: #263859;
+  color: #263859;
+  border: 2px solid #263859;
 }
 
 .cta3{
@@ -313,10 +312,9 @@ a.secondary {
   border-radius: 10px;
   transition: 0.2s ease-in-out;
   font-size: 16px;
-  background-color: #263859;
-  color: #FAFAFA;
   border: 2px solid #263859;
-  background: 'transparent';
+  background: #263859; 
+  color: #FAFAFA;
 }
 
 .cta3:hover{
@@ -354,8 +352,8 @@ a.secondary {
   }
   .time
   {
-    color: #101010;
-    background: #d7f7f5;
+    color: #d7f7f5;
+    border: 2px solid #d7f7f5;
   }
   .educationDepartment{
     color: #d7f7f5;
@@ -367,7 +365,7 @@ a.secondary {
     color: #D0D0D0;
   }
   .cta3{
-    background-color: #d7f7f5;
+    background: #d7f7f5;
     color: #101010;
     border: 2px solid #d7f7f5;
   }
