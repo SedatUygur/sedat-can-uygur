@@ -175,3 +175,20 @@ export const userInfo = {
         ]
     },
 }
+
+export const headings = {
+    workHomePage: 'Work',
+    workMainPage: 'Projects and Blogs',
+    capabilities: 'Capabilities',
+    about: 'About Me',
+    blogs: 'I write on Medium',
+    contact: 'Contact Me'
+}
+
+export const ctaTexts = {
+    landingCTA : 'My work',
+    workCTA: 'View All',
+    capabCTA: 'Get in Touch',
+    resumeCTA: 'Resume',
+    submitBTN: 'Submit'
+}

@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Name: </strong>${name}</p>
         <p><strong>Email: </strong>${email}</p>
         <p><strong>Phone: </strong>${phone}</p>
-        <h4>Message: </h4><p>${message}</p>
+        <p><strong>Message: </strong>${message}</p>
         <p style="color:red;">Please do not reply to this email!</p>`
     };
 

@@ -4,8 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/blogsprojects.module.css'
 
-const BlogCard = ({ blog }) => {
+interface Blog {
+    thumbnail: string;
+    title: string;
+    description: string;
+    link: string;
+    url: string;
+    categories: string[];
+    tag_list: string[];
+}
 
+const BlogCard = ({ blog }: { blog: Blog }) => {
     return (
         <div style={{ whiteSpace: 'initial' }}>
             <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
