@@ -8,10 +8,10 @@
 
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  /* min-height: 100svh;
+  height: 90vh; */
   gap: 10px;
   font-family: var(--font-geist-sans);
-  height: 90vh;
   width: 100%;
   text-align: center;
   position: relative;

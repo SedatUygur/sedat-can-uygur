@@ -50,6 +50,39 @@ export const userInfo = {
         title: "Education",
         visible: true
     },
+    experience: {
+        visible: true,
+        items: [
+            {
+                company: 'Freelance',
+                companylogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUGjq6nmQlFz3lVCY6Rshn2fsHEHPGe5331w&usqp=CAU',
+                position: 'Senior Software Engineer',
+                time: '09/2023 - Present',
+                description: 'Architect and develop full stack solutions with an emphasis on scalable microservices and resilient design. Implement fault‑tolerant and performance optimizations using patterns like circuit breakers and redundancy. Leverage cloud platforms (AWS, Google Cloud) and containerization (Docker, Kubernetes) to streamline deployments.'
+            },
+            {
+                company: 'feature/mind',
+                companylogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUGjq6nmQlFz3lVCY6Rshn2fsHEHPGe5331w&usqp=CAU',
+                position: 'Senior Software Engineer',
+                time: '10/2021 - 06/2023',
+                description: 'Led design, development and integration of Salesforce-based solutions on Commerce Cloud and Service Cloud. Developed end‑to‑end projects using Lightning, APEX and Salesforce Flows. Streamlined data migration processes and implemented rigorous testing and documentation practices.'
+            },
+            {
+                company: 'Vodafone',
+                companylogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUGjq6nmQlFz3lVCY6Rshn2fsHEHPGe5331w&usqp=CAU',
+                position: 'Senior Software Engineer',
+                time: '03/2020 - 09/2021',
+                description: 'Designed and implemented ticket management and web service projects using SOAP and REST APIs. Designed scalable and service‑oriented architectures to support large‑scale IT operations and enterprise workflows.'
+            },
+            {
+                company: 'Kuzey Pharma',
+                companylogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUGjq6nmQlFz3lVCY6Rshn2fsHEHPGe5331w&usqp=CAU',
+                position: 'Software Engineer',
+                time: '03/2017 - 02/2020',
+                description: 'Designed and developed an ERP project using Java technologies, ensuring robust business process automation. Created and managed databases with T-SQL and PL/SQL to maintain data integrity and performance.'
+            },
+        ],
+    },
     footer: {
         copyright: "All rights reserved. Developed by Sedat Can Uygur",
         quicklinks: {
@@ -185,7 +218,8 @@ export const headings = {
     skills: 'Skills',
     about: 'About Me',
     blogs: 'My favorite blogs on Medium',
-    contact: 'Contact Me'
+    contact: 'Contact Me',
+    experience: 'Experiences',
 }
 
 export const ctaTexts = {

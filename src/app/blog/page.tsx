@@ -5,7 +5,7 @@ import styles from "../page.module.css";
 import BlogCard from '@/components/BlogCard';
 import Carousel, { CarouselItem } from "@/components/Carousel";
 
-export default function About() {
+export default function Blog() {
     const [blogList, setBlogList] = useState([]);
     useEffect(() => {
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@eddiebarth')
@@ -15,7 +15,6 @@ export default function About() {
     }, []);
     return (
         <div className={styles.page}>
-            {/* <div className={styles.workHeading}>Blogs</div> */}
             {
                 blogList ? <Carousel>
                     {blogList.slice(0,6).map((blog, key) => {
