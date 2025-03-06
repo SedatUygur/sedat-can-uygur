@@ -307,6 +307,22 @@ a.secondary {
   background: #263859;
 }
 
+.cta3{
+  padding: 0.4rem 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  font-size: 16px;
+  background-color: #263859;
+  color: #FAFAFA;
+  border: 2px solid #263859;
+  background: 'transparent';
+}
+
+.cta3:hover{
+  transform: translateY(-5px);
+}
+
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -349,6 +365,11 @@ a.secondary {
   }
   .educationGPA{
     color: #D0D0D0;
+  }
+  .cta3{
+    background-color: #d7f7f5;
+    color: #101010;
+    border: 2px solid #d7f7f5;
   }
 }
 

@@ -31,7 +31,7 @@ export const userInfo = {
         submit: "Submit"
     },
     education: {
-        title: "Education",
+        about: "About Me",
         schools: [
             {
                 time: '2010 - 2015',
@@ -46,6 +46,8 @@ export const userInfo = {
                 grade: '86.02 / 100'
             }
         ],
+        title: "Education",
+        visible: true
     },
     footer: {
         copyright: "Sedat Can Uygur. All rights reserved.",

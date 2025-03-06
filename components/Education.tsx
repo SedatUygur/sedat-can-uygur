@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 import { userInfo } from '@/public/js/userInfo'
@@ -9,7 +10,6 @@ const Education = () => {
             <div className={styles.workheading} data-aos="fade-up">
                 {userInfo.education.title}
             </div>
-
             <div className={styles.timeline}>
                 <ul>
                     {
@@ -32,7 +32,7 @@ const Education = () => {
                     <div style={{ clear: 'both' }}></div>
                 </ul>
             </div>
-
+            <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link href="/about" className={styles.cta3}>{userInfo.education.about}<span> &gt;</span></Link></div>
         </div>
     )
 }

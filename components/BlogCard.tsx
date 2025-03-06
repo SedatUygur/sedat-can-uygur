@@ -8,13 +8,13 @@ const BlogCard = ({ blog }) => {
 
     return (
         <div style={{ whiteSpace: 'initial' }}>
-            <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden"> 
+            <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
                 {/* bg={currentTheme.secondary} */}
-                {blog.thumbnail && <Image src={blog.thumbnail} alt='asach kahitari' height='300' width='500' /> }
+                {blog.thumbnail && <Image src={blog.thumbnail} alt='Sedat Can Uygur' height='300' width='500' /> }
                 <Box p="6">
                     <HStack>
                         {
-                            blog.categories.slice(0, 3).map((category:any, key:any) => {
+                            blog.categories ? blog.categories.slice(0, 3).map((category:any, key:any) => {
                                 return (
                                     <div key={key}>
                                         <Tag.Root size="sm" borderRadius="md" variant="outline" colorPalette="purple">
@@ -22,7 +22,16 @@ const BlogCard = ({ blog }) => {
                                         </Tag.Root>
                                     </div>
                                 )
-                            })
+                            }) : blog.tag_list ?
+                            blog.tag_list.slice(0, 3).map((category:any, key:any) => {
+                                return (
+                                    <div key={key}>
+                                        <Tag.Root size="sm" borderRadius="md" variant="outline" colorScheme="blue">
+                                            <Tag.Label>{category}</Tag.Label>
+                                        </Tag.Root>
+                                    </div>
+                                )
+                            }) : null
                         }
                     </HStack>
                     <Box
@@ -34,11 +43,11 @@ const BlogCard = ({ blog }) => {
                     </Box>
                     <Box as="span" fontSize="sm">
                     {/* color={currentTheme.subtext} */}
-                        {blog.description.replace(/(<([^>]+)>)/ig, '').slice(0, 85) + ' . . .'}
+                        {blog.description.replace(/(<([^>]+)>)/ig, '').slice(0, 85) + ' ...'}
                     </Box>
                     <div style={{marginTop: '1rem'}}>
                         <Box>
-                            <Link href={blog.link} className={styles.cta2} style={{ color: '#3182ce' }}>View More</Link>
+                            <Link href={blog.link || blog.url} className={styles.cta2} style={{ color: '#3182ce' }}>View More</Link>
                         </Box>
                     </div>
                 </Box>

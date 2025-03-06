@@ -37,7 +37,9 @@ export default function Home() {
         <Skills />
       </div>
       <div>
-        <Education />
+        {
+          userInfo.education.visible ? <Education /> : null
+        }
       </div>
       <div id="about" className={styles.homeAboutSection}>
         <h1 className={styles.workheading} data-aos="fade-up">{userInfo.about.title}</h1>
