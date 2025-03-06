@@ -30,6 +30,23 @@ export const userInfo = {
         },
         submit: "Submit"
     },
+    education: {
+        title: "Education",
+        schools: [
+            {
+                time: '2010 - 2015',
+                department: 'Computer Engineering',
+                name: 'Muğla Sıtkı Koçman University',
+                grade: '2.76 / 4'
+            },
+            {
+                time: '2006 - 2010',
+                department: 'Science',
+                name: 'Ortaklar Science High School',
+                grade: '86.02 / 100'
+            }
+        ],
+    },
     footer: {
         copyright: "Sedat Can Uygur. All rights reserved.",
         quicklinks: {
