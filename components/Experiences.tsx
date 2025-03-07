@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
 
 import { userInfo, headings } from '@/public/js/userInfo';
+
 // import styles from '../styles/about.module.css';
 import styles from '@/src/app/page.module.css';
 

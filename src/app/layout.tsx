@@ -1,7 +1,6 @@
 'use client';
 
 import AOS from 'aos';
-import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
@@ -9,7 +8,6 @@ import { defaultSystem, ChakraProvider } from '@chakra-ui/react';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { userInfo } from '@/public/js/userInfo';
 
 import { lightTheme, darkTheme, GlobalStyles } from '@/styles/ThemeConfig';
 import './globals.css';
@@ -25,7 +23,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const metadata: Metadata = {
+/* const metadata: Metadata = {
   title: userInfo.name,
   description: userInfo.home.subtitle,
   keywords: [
@@ -47,8 +45,6 @@ const metadata: Metadata = {
   openGraph: {
     title: userInfo.name,
     description: userInfo.home.subtitle,
-    /* url: "https://sedatcanuygur.com/blog",
-    siteName: "sedatcanuygur.com", */
     locale: 'en-US',
     type: 'website',
   },
@@ -57,10 +53,8 @@ const metadata: Metadata = {
     title: userInfo.name,
     description: userInfo.home.subtitle,
     creator: '@_SedatUygur',
-    /* siteId: "1467726470533754880",
-    creatorId: "1467" */
   },
-};
+}; */
 
 export default function RootLayout({
   children,
