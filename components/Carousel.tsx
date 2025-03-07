@@ -5,15 +5,11 @@ import { useSwipeable } from 'react-swipeable';
 import { headings } from '@/public/js/userInfo';
 import styles from '../styles/blogsprojects.module.css';
 
-export const CarouselItem = ({ children, width }) => {
-  return (
-    <div className={styles.carouselItem} style={{ width: width }}>
-      {children}
-    </div>
-  );
+export const CarouselItem = ({ children }: { children: React.ReactNode }) => {
+  return <div className={styles.carouselItem}>{children}</div>;
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children }: { children: React.ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [isSmall] = useMediaQuery(['(max-width: 1200px)'], {
@@ -70,9 +66,14 @@ const Carousel = ({ children }) => {
         onMouseLeave={() => setPaused(false)}
       >
         {React.Children.map(children, (child) => {
-          return React.cloneElement(child, {
-            width: isSmall ? (isVerySmall ? '100%' : '50%') : '33.33%',
-          });
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              style: {
+                width: isSmall ? (isVerySmall ? '100%' : '50%') : '33.33%',
+              },
+            } as React.HTMLAttributes<HTMLElement>);
+          }
+          return null;
         })}
       </div>
       <div className={styles.indicators}>

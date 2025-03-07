@@ -20,9 +20,9 @@ export default function Blog() {
     <div className={styles.page}>
       {blogList ? (
         <Carousel>
-          {blogList.slice(0, 6).map((blog, key) => {
+          {blogList.slice(0, 3).map((blog, key) => {
             return (
-              <CarouselItem key={key} width={undefined}>
+              <CarouselItem key={key}>
                 <BlogCard blog={blog} />
               </CarouselItem>
             );
