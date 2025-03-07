@@ -18,13 +18,17 @@
   },
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prettier --check . && next build",
-    "build:local": "prettier --write . && next build",
-    "format": "prettier --write .",
+    "build": "prettier . --check && next build",
+    "build:local": "prettier . --write && next build",
+    "format": "prettier . --write",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
@@ -53,6 +57,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "^10.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "3.5.3",
     "typescript": "^5"
   }
