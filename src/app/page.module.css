@@ -76,7 +76,7 @@
 
 .workheading {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -196,29 +196,29 @@ a.secondary {
 }
 
 .educationWrapper {
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
 .content {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .educationDepartment {
   color: #263859;
 }
 .educationGPA {
-  color: #707070;
+  color: #333;
 }
 .educationSchool {
   color: #363537;
 }
 .clear {
-  clear: inline-start;
+  clear: both;
 }
 /* timeline styles */
 .timeline {
   position: relative;
-  margin: 2rem auto;
-  padding: 40px 0;
-  width: 60vw;
+  /* margin: 2rem auto;
+  padding: 40px 0; */
+  width: 100vw;
   box-sizing: border-box;
 }
 .timeline:before {
@@ -271,24 +271,24 @@ a.secondary {
   border-radius: 50%;
 }
 .timeline ul li p {
-  margin: 10px 0 0;
+  margin: 5px 0 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 .timeline ul li .time h4 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 .timeline ul li:nth-child(odd) .time {
   position: absolute;
   top: 12px;
   right: -165px;
   margin: 0;
-  width: 150px;
+  width: 161px;
   text-align: center;
-  padding: 8px 16px;
-  border-radius: 18px;
+  padding: 5px 10px;
+  border-radius: 15px;
   color: #263859;
   border: 2px solid #263859;
 }
@@ -296,7 +296,7 @@ a.secondary {
   position: absolute;
   top: 12px;
   left: -165px;
-  width: 150px;
+  width: 161px;
   text-align: center;
   margin: 0;
   padding: 8px 16px;
@@ -446,7 +446,7 @@ a.secondary {
     font-size: 15px;
   }
   .workheading {
-    font-size: 45px;
+    font-size: 15px;
   }
   .aboutText {
     text-align: left;
@@ -535,7 +535,7 @@ a.secondary {
     padding: 2rem 1rem;
   }
   .workheading {
-    font-size: 40px;
+    font-size: 13px;
   }
   .homeAboutSection {
     height: 80vh;
