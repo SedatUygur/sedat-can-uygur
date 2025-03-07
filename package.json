@@ -1,5 +1,21 @@
 {
+  "author": "Sedat Can Uygur",
+  "description": "My portfolio website template!",
+  "keywords": [
+    "chakra-ui",
+    "fully customisable",
+    "nextjs",
+    "portfolio",
+    "react",
+    "styled-components",
+    "template",
+    "typescript"
+  ],
   "name": "sedatcanuygur",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sedatuygur/sedat-can-uygur"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {

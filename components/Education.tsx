@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
 
-import { headings, ctaTexts, userInfo } from '@/public/js/userInfo'
+import { headings, userInfo } from '@/public/js/userInfo'
 import styles from '@/src/app/page.module.css'
 
 const Education = () => {
@@ -16,7 +15,7 @@ const Education = () => {
                         userInfo.education.schools ?
                             userInfo.education.schools.map((school, key) => {
                                 return (
-                                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" key={key}>
+                                    <li data-aos="fade-up" key={key}>
                                         <div className={styles.content}>
                                             <h3>{school.department}</h3>
                                             <p>{school.name}</p>

@@ -9,7 +9,7 @@ const Footer = () => {
     return (
       <div className={styles.footermain}>
           <div className={styles.footertable}>
-              <Link href='/'><h2 className={styles.footerlogo}>{userInfo.logoText}</h2></Link>
+              <Link href='/'><h2 className={styles.footerlogo}>{userInfo.name}</h2></Link>
               <ul>
                   <li className={styles.listHeading}>{userInfo.footer.socialmedia.heading}</li>
                   {userInfo.socials ?

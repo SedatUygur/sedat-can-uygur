@@ -1,7 +1,7 @@
 import { faGithub, faSquareXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 export const userInfo = {
-    logoText: "Sedat Can Uygur",
+    name: "Sedat Can Uygur",
     about: {
         title: "About Me",
         description: "Hi I am Sedat Can Uygur. I’ve been a full-stack engineer for over 8 years, working with a variety of technologies, including C#, Java, Python, JavaScript, and TypeScript. I started my career focusing on back-end systems, especially in .NET, but over time I expanded to front-end frameworks like Angular and React. In my recent roles, I’ve worked on projects for global brands such as Under Armour and SSS, where I developed scalable microservices and integrated multiple APIs. For the past couple of years, I’ve also gained experience with cloud platforms—AWS and Azure—using Docker and Kubernetes to containerize and orchestrate microservices. This experience feels highly relevant on cloud-native applications and modern architectures.",
