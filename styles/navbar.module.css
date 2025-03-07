@@ -1,9 +1,9 @@
-.logo{
+.logo {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
 }
 
-.navbar{
+.navbar {
   z-index: 50;
   padding: 0.9rem 5rem 1.3rem 5rem;
   width: -webkit-fill-available;
@@ -15,14 +15,14 @@
   font-size: 15px;
 }
 
-.navlinks a{
-    opacity: 80%;
-    position: relative;
-    text-transform: uppercase;
+.navlinks a {
+  opacity: 80%;
+  position: relative;
+  text-transform: uppercase;
 }
 
-.navlinks a:hover{
-    opacity: 100%;
+.navlinks a:hover {
+  opacity: 100%;
 }
 
 .navlinks a:after {
@@ -43,15 +43,15 @@
   transition: 0.25s linear;
 }
 
-@media only screen and (max-width: 950px){
-  .logo{
+@media only screen and (max-width: 950px) {
+  .logo {
     font-size: 20px;
   }
-  .navbar{
+  .navbar {
     padding: 0.5rem;
   }
   .navlinks {
     padding: 0.5rem;
     font-size: 12px;
-  } 
+  }
 }

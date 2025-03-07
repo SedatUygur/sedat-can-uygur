@@ -1,158 +1,157 @@
 .footerMain {
-    background-color: rgb(31,41,55);
-    padding: 2rem; 
-    color: rgb(255,255,255);
-    text-align: center;
+  background-color: rgb(31, 41, 55);
+  padding: 2rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 .container {
-    width: 100%;
-    margin-left: auto; 
-    margin-right: auto;
-    padding-left: 1rem; 
-    padding-right: 1rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .linksSocialMedia {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .title2 {
-    margin-bottom: 0.5rem; 
-    font-size: 1.125rem; 
-    line-height: 1.75rem; 
-    font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
 }
 
 .bottomMenu {
-    margin-top: calc(0.5rem * calc(1 - 0)); 
-    margin-bottom: calc(0.5rem * 0);
+  margin-top: calc(0.5rem * calc(1 - 0));
+  margin-bottom: calc(0.5rem * 0);
 }
 
 .bottomLink:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .copyright {
-    text-align: center;
-    font-size: 16px;
+  text-align: center;
+  font-size: 16px;
 }
 
-.footerlogo{
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
+.footerlogo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
 }
 
-.footermain{
-    padding: 2rem;
-    text-align: center;
-    background-color: #F0F0F0;
-    color: #707070;
-}
-  
-.footercontent{
-    text-align: center;
-    font-size: 16px;
-    margin-top: 2rem;
+.footermain {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #707070;
 }
 
-.footerbreak{
-    height: 1px;
-    border: none;
-    opacity: 0.5;
-    background-color: #707070;
+.footercontent {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 2rem;
 }
-  
+
+.footerbreak {
+  height: 1px;
+  border: none;
+  opacity: 0.5;
+  background-color: #707070;
+}
+
 .footertable {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    margin: 2rem auto;
-    width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin: 2rem auto;
+  width: 80%;
 }
-  
-.footertable ul{
-    list-style: none;
-    text-align: left;
+
+.footertable ul {
+  list-style: none;
+  text-align: left;
 }
-  
-.footertable li{
-    font-size: 14px;
-    margin: 0.2rem 0;
-    text-transform: capitalize;
+
+.footertable li {
+  font-size: 14px;
+  margin: 0.2rem 0;
+  text-transform: capitalize;
 }
-  
-.footertable li:hover{
-    text-decoration: underline;
+
+.footertable li:hover {
+  text-decoration: underline;
 }
-  
-.listHeading{
-    font-weight: bold;
-    font-size: 16px !important;
+
+.listHeading {
+  font-weight: bold;
+  font-size: 16px !important;
 }
-  
-.listHeading:hover{
-    text-decoration: none !important;
+
+.listHeading:hover {
+  text-decoration: none !important;
 }
 
 @media (prefers-color-scheme: dark) {
-    .footermain{
-        background-color: #16161D;
-        color: #D0D0D0;
-    }
-    .footerbreak{
-        background-color: #D0D0D0;
-    }
+  .footermain {
+    background-color: #16161d;
+    color: #d0d0d0;
+  }
+  .footerbreak {
+    background-color: #d0d0d0;
+  }
 }
 
 @media (min-width: 768px) {
   .flex {
-        flex-direction: row;
+    flex-direction: row;
   }
 
   .linksSocialMedia {
-        margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .copyright {
-        text-align: right;
+    text-align: right;
   }
 }
 
-@media only screen and (max-width: 550px){
-  .footerlogo{
-      font-size: 25px;
+@media only screen and (max-width: 550px) {
+  .footerlogo {
+    font-size: 25px;
   }
-  .footermain{
-      text-align: left;
+  .footermain {
+    text-align: left;
   }
   .footertable {
-      display: block;
-      margin: 0 auto 2rem auto;
-      padding: 0 2rem;
-      width: 100%;
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 0 2rem;
+    width: 100%;
   }
-  .footertable ul{
-      list-style: none;
+  .footertable ul {
+    list-style: none;
   }
-  .listHeading{
-      margin-top: 1.5rem !important;
+  .listHeading {
+    margin-top: 1.5rem !important;
   }
 }
 
-@media only screen and (max-width: 380px){
-
+@media only screen and (max-width: 380px) {
   .copyright {
-      font-size: 14px;
+    font-size: 14px;
   }
   .footertable {
-        padding: 0;
+    padding: 0;
   }
 }
