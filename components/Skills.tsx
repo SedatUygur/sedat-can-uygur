@@ -31,7 +31,7 @@ const Skills = () => {
             })
           : null}
       </div>
-      <div style={{ textAlign: 'center', padding: '1rem 0' }}>
+      <div className={styles.ctaMain3}>
         <Link className={styles.cta3} href={userInfo.skills.contact.href}>
           {ctaTexts.capabCTA} <span>&gt;</span>
         </Link>

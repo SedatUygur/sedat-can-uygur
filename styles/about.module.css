@@ -1,7 +1,6 @@
 .experienceWrapper {
   max-width: 75vw;
-  margin: auto;
-  margin-bottom: 0.5rem;
+  margin: 1rem;
 }
 
 .experienceCardWrapper {
@@ -13,7 +12,7 @@
 }
 
 .experienceCard {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
   max-width: 593px;
   transition: 0.2s ease-in;
 }
@@ -24,11 +23,10 @@
 
 .experienceTitle {
   background: #d7f7f5;
-  height: 5px;
 }
 
 .experienceCardContent {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   position: relative;
   top: 0;
   text-align: center;
@@ -45,15 +43,17 @@
 
 .experienceCardContent h3 {
   font-size: 12px;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   position: relative;
-  top: 5px;
 }
 
 .experienceCardContent h4 {
-  font-size: 10px;
+  font-size: 11px;
   position: relative;
-  top: 4px;
+  color: #707070;
+}
+
+.experienceTime {
   color: #707070;
 }
 
@@ -70,6 +70,9 @@
   .experienceTitle {
     background: #263859;
   }
+  .experienceTime {
+    color: #d0d0d0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -79,11 +82,11 @@
   }
 
   .experienceCard {
-    margin: 0 0.5rem;
+    margin: 0 1rem;
   }
 
   .experienceCardContent h3 {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
 }
 

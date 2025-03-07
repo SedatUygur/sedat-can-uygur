@@ -16,9 +16,9 @@ const Education = () => {
                 return (
                   <li data-aos="fade-up" key={key}>
                     <div className={styles.content}>
-                      <h3>{school.department}</h3>
-                      <p>{school.name}</p>
-                      <p>{school.grade}</p>
+                      <h3 className={styles.educationDepartment}>{school.department}</h3>
+                      <p className={styles.educationSchool}>{school.name}</p>
+                      <p className={styles.educationGPA}>{school.grade}</p>
                     </div>
                     <div className={styles.time}>
                       <h4>{school.time}</h4>
@@ -27,7 +27,7 @@ const Education = () => {
                 );
               })
             : null}
-          <div style={{ clear: 'inline-start' }}></div>
+          <div className={styles.clear}></div>
         </ul>
       </div>
       {/* <div style={{ textAlign: 'center', paddingBottom: '2rem' }}><Link href="/about" className={styles.cta3}>{ctaTexts.educationCTA}<span> &gt;</span></Link></div> */}

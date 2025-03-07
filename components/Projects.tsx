@@ -103,15 +103,12 @@ const Projects = () => {
                   <div className={styles.imageandsocials} {...handlers}>
                     <div className={styles.card} style={projectStyle}>
                       <div className={styles.arrows} style={{ color: 'lightgray' }}>
-                        <button
-                          onClick={() => back(project.id)}
-                          style={{ color: 'blue', fontSize: '40px' }}
-                        >
+                        <button className={styles.arrow} onClick={() => back(project.id)}>
                           &lt;
                         </button>
                         <button
+                          className={styles.arrow}
                           onClick={() => ahead(project.id)}
-                          style={{ color: 'blue', fontSize: '40px' }}
                         >
                           &gt;
                         </button>

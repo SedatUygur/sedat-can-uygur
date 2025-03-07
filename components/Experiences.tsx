@@ -35,11 +35,11 @@ const Experiences = () => {
                                                     <Avatar.Image src={exp.companylogo} />
                                                 </Avatar.Root>
                                             </div> */}
-                      <div style={{ position: 'relative' }}>
+                      <div>
                         <h2>{exp.position}</h2>
                         <h3>{exp.description}</h3>
                       </div>
-                      <h4>{exp.time}</h4>
+                      <h4 className={styles.experienceTime}>{exp.time}</h4>
                     </div>
                   </Box>
                 </div>

@@ -16,9 +16,14 @@ interface Blog {
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
   return (
-    <div style={{ whiteSpace: 'initial' }}>
-      <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-        {/* bg={currentTheme.secondary} */}
+    <div className={styles.blogCardMain}>
+      <Box
+        className={styles.blogCardBox}
+        maxW="sm"
+        borderWidth="2px"
+        borderRadius="lg"
+        overflow="hidden"
+      >
         {blog.thumbnail && (
           <Image src={blog.thumbnail} alt="Sedat Can Uygur" height="300" width="500" />
         )}
@@ -59,17 +64,12 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           <Box mt="1" as="h4" lineHeight="tight">
             {blog.title}
           </Box>
-          <Box as="span" fontSize="sm">
-            {/* color={currentTheme.subtext} */}
+          <Box className={styles.blogCardDescription} as="span" fontSize="sm">
             {blog.description.replace(/(<([^>]+)>)/gi, '').slice(0, 85) + ' ...'}
           </Box>
-          <div style={{ marginTop: '1rem' }}>
+          <div className={styles.viewMore}>
             <Box>
-              <Link
-                href={blog.link || blog.url}
-                className={styles.cta2}
-                style={{ color: '#3182ce' }}
-              >
+              <Link href={blog.link || blog.url} className={styles.cta2}>
                 View More
               </Link>
             </Box>

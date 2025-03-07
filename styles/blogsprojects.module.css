@@ -30,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0.2rem;
+  position: relative;
 }
 
 .arrows {
@@ -78,6 +79,27 @@
   padding: 1rem;
 }
 
+.blogCardBox {
+  background: #d7f7f5;
+}
+
+.blogCardDescription {
+  color: #707070;
+}
+
+.blogCardMain {
+  white-space: 'initial';
+}
+
+.arrow {
+  color: blue;
+  font-size: 40px;
+}
+
+.viewMore {
+  margin-top: 1rem;
+}
+
 .workmain {
   padding: 0 20vw;
   color: #707070;
@@ -96,7 +118,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .carousel {
@@ -129,6 +151,7 @@
 .cta2 {
   font-size: 14px;
   text-decoration: underline;
+  color: #3182ce;
 }
 
 .pagination {
@@ -201,7 +224,7 @@
     padding: 0;
   }
   .carouselItem {
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
   .blogHeading {
     font-size: 35px;
@@ -219,5 +242,11 @@
   .socialIcon {
     color: #d0d0d0;
     border-color: #d0d0d0;
+  }
+  .blogCardBox {
+    background: #263859;
+  }
+  .blogCardDescription {
+    color: #d0d0d0;
   }
 }

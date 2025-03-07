@@ -45,6 +45,11 @@
   transform: translateY(-5px);
 }
 
+.ctaMain3 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
 .cta4 {
   padding: 0.4rem 2.5rem;
   border-radius: 10px;

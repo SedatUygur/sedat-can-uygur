@@ -7,7 +7,6 @@ import styles from '../styles/blogsprojects.module.css';
 
 export const CarouselItem = ({ children, width }) => {
   return (
-    // backgroundColor: currentTheme.secondary
     <div className={styles.carouselItem} style={{ width: width }}>
       {children}
     </div>
@@ -63,7 +62,6 @@ const Carousel = ({ children }) => {
 
   return (
     <div {...handlers} className={styles.carousel} data-aos="fade-up" id="blogs">
-      {/* style={{ backgroundColor: currentTheme.secondary }} */}
       <div className={styles.blogHeading}>{headings.blogs}</div>
       <div
         className={styles.inner}

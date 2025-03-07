@@ -13,7 +13,10 @@ interface Project {
 
 const HomeProject = ({ project }: { project: Project }) => {
   return (
-    <div className={styles.projectmain}>
+    <div
+      className={styles.projectmain}
+      style={{ borderRadius: project.id % 2 === 0 ? '50px 0 0 0' : '0 0 50px 0' }}
+    >
       <div className={styles.projectContent}>
         <div className={styles.projectIcon}>
           <Link href={project.projectLink}>

@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           );
         })}
-        <div style={{ textAlign: 'center', paddingBottom: '2rem' }}>
+        <div className={styles.projectsCTA}>
           <Link className={styles.cta3} href="/projects">
             {ctaTexts.workCTA} <span>&gt;</span>
           </Link>
@@ -49,28 +49,8 @@ export default function Home() {
         <p className={styles.aboutText} data-aos="fade-up">
           {userInfo.about.description}
         </p>
-        <div
-          data-aos="fade-up"
-          style={{
-            textAlign: 'center',
-            padding: '1rem 0',
-            margin: '1rem 0',
-            position: 'relative',
-            display: 'flex',
-          }}
-        >
-          {/* color: currentTheme.subtext add it to div and link */}
-          <Link
-            className={styles.cta4}
-            href={userInfo.about.resume}
-            target="_blank"
-            style={{
-              alignItems: 'center',
-              background: 'transparent',
-              border: `2px solid`,
-              display: 'flex',
-            }}
-          >
+        <div className={styles.resumeCTA} data-aos="fade-up">
+          <Link className={styles.cta4} href={userInfo.about.resume} target="_blank">
             {ctaTexts.resumeCTA}&nbsp;&nbsp;&nbsp;&nbsp;
             <FontAwesomeIcon width="15px" height="15px" icon={faGoogleDrive} />
           </Link>

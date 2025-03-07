@@ -53,7 +53,7 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
           <h2 className={styles.logo}>Sedat Can Uygur</h2>
         </Link>
         {!drawerVisible ? (
-          <div style={{ display: 'flex' }}>
+          <div className={styles.flexlinks}>
             <NavLinks />
           </div>
         ) : null}
@@ -76,9 +76,7 @@ export default function Navbar({ toggleTheme, currentTheme }: NavbarProps) {
       {drawerVisible ? (
         <>
           <hr></hr>
-          <div
-            style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '10px' }}
-          >
+          <div className={styles.flexlinksSpace}>
             <NavLinks />
           </div>
         </>
