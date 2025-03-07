@@ -24,7 +24,7 @@
   <h3 align="center">Sedat Can Uygur</h3>
 
   <p align="center">
-    Easy-to-use portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+    Easy-to-use portfolio website built with Chakra UI, Next.js and TypeScript.
     <br />
     <a href="https://github.com/SedatUygur/sedat-can-uygur/README.md"><strong>Explore the docs</strong></a>
     <br />
@@ -63,7 +63,7 @@
 
 ## About The Project
 
-My portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+My portfolio website built with with Chakra UI, Next.js and TypeScript.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
