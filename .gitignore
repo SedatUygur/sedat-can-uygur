@@ -19,7 +19,6 @@
 
 # production
 /build
-/src/components/*
 
 # misc
 .DS_Store
