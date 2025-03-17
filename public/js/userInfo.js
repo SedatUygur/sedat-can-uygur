@@ -103,17 +103,9 @@ export const userInfo = {
     quicklinks: {
       heading: 'Pages',
       title: 'Quick Links',
-      home: {
-        label: 'Home',
-        href: '/',
-      },
       about: {
         label: 'About',
         href: '/about',
-      },
-      projects: {
-        label: 'Projects',
-        href: '/projects',
       },
       blog: {
         label: 'Blog',
@@ -122,6 +114,18 @@ export const userInfo = {
       contact: {
         label: 'Contact',
         href: '/contact',
+      },
+      cv: {
+        label: 'CV',
+        href: '/cv',
+      },
+      home: {
+        label: 'Home',
+        href: '/',
+      },
+      projects: {
+        label: 'Projects',
+        href: '/projects',
       },
     },
     socialmedia: {

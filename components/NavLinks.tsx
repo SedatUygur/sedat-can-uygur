@@ -34,18 +34,26 @@ const NavLinks = () => {
       </div>
       <div className={styles.navlinks}>
         <Link
-          href={userInfo.footer.quicklinks.projects.href}
-          style={{ opacity: activeLink === '/projects' ? '100%' : '80%' }}
-        >
-          {userInfo.footer.quicklinks.projects.label}
-        </Link>
-      </div>
-      <div className={styles.navlinks}>
-        <Link
           href={userInfo.footer.quicklinks.blog.href}
           style={{ opacity: activeLink === '/blog' ? '100%' : '80%' }}
         >
           {userInfo.footer.quicklinks.blog.label}
+        </Link>
+      </div>
+      <div className={styles.navlinks}>
+        <Link
+          href={userInfo.footer.quicklinks.cv.href}
+          style={{ opacity: activeLink === '/cv' ? '100%' : '80%' }}
+        >
+          {userInfo.footer.quicklinks.cv.label}
+        </Link>
+      </div>
+      <div className={styles.navlinks}>
+        <Link
+          href={userInfo.footer.quicklinks.projects.href}
+          style={{ opacity: activeLink === '/projects' ? '100%' : '80%' }}
+        >
+          {userInfo.footer.quicklinks.projects.label}
         </Link>
       </div>
       <div className={styles.navlinks}>
